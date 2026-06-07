@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import SocialIcons from './SocialIcons'
 
 export default function Nav() {
   const [voorbijCountdown, setVoorbijCountdown] = useState(false)
@@ -43,16 +44,11 @@ export default function Nav() {
 
         {/* Rechts */}
         <div className="flex items-center gap-3 flex-1 justify-end">
-          <div className="hidden sm:flex items-center gap-1.5">
+          <div className="hidden sm:flex items-center gap-1.5 mr-1">
             <span className="w-1.5 h-1.5 rounded-full bg-[#E8611A] animate-pulse" />
             <span className="text-xs text-gray-400 font-medium">1 juli 2026</span>
           </div>
-          <a
-            href="#download"
-            className="text-xs font-semibold bg-[#E8611A] hover:bg-[#d4561a] text-white px-3.5 py-2 rounded-xl transition-colors"
-          >
-            Binnenkort
-          </a>
+          <SocialIcons size="sm" />
         </div>
       </nav>
     </div>

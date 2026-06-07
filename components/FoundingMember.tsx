@@ -1,6 +1,6 @@
 export default function FoundingMember() {
   return (
-    <section className="py-8 sm:py-12">
+    <section id="founding-member" className="py-8 sm:py-12">
       <div className="max-w-6xl mx-auto px-6">
         <div className="relative overflow-hidden rounded-3xl bg-[#E8611A] p-8 sm:p-12">
           {/* Achtergrond patroon */}

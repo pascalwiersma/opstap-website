@@ -2,7 +2,7 @@ import PhoneMockup from "./PhoneMockup";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-32 overflow-hidden">
       {/* Achtergrond glow */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#E8611A]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#E8611A]/5 rounded-full blur-3xl pointer-events-none" />

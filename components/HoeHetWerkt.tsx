@@ -36,7 +36,7 @@ const STAPPEN = [
 
 export default function HoeHetWerkt() {
   return (
-    <section className="py-24 sm:py-32 relative">
+    <section id="hoe-het-werkt" className="py-24 sm:py-32 relative">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">

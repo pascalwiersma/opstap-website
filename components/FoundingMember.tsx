@@ -29,19 +29,15 @@ export default function FoundingMember() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <a
-                href="#download"
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-[#E8611A] font-bold px-6 py-3.5 rounded-2xl transition-colors text-sm whitespace-nowrap"
-              >
-                Download voor iOS
-              </a>
-              <a
-                href="#download"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-6 py-3.5 rounded-2xl transition-colors text-sm whitespace-nowrap"
-              >
-                Download voor Android
-              </a>
+            <div className="flex flex-col gap-3 shrink-0">
+              <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-2xl px-5 py-3.5">
+                <span className="text-xl">📅</span>
+                <div>
+                  <p className="text-white/60 text-xs">Beschikbaar vanaf</p>
+                  <p className="text-white font-black text-lg leading-none">1 juli 2026</p>
+                </div>
+              </div>
+              <p className="text-white/60 text-xs text-center">App Store · Google Play</p>
             </div>
           </div>
         </div>

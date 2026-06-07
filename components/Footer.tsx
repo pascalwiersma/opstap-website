@@ -5,10 +5,9 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
           {/* Logo + tagline */}
           <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-[#E8611A] flex items-center justify-center">
-                <span className="text-white font-black text-xs">O</span>
-              </div>
+            <div className="flex items-center gap-2.5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="OpStap logo" className="w-7 h-7 rounded-xl" />
               <span className="text-white font-bold">OpStap</span>
             </div>
             <p className="text-gray-500 text-sm">Een product van Pascal Services</p>

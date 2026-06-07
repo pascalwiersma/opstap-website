@@ -13,7 +13,7 @@ export default function Hero() {
           <div className="flex flex-col gap-6">
             <div className="inline-flex items-center gap-2 bg-[#E8611A]/15 border border-[#E8611A]/30 rounded-full px-4 py-1.5 w-fit">
               <span className="w-2 h-2 rounded-full bg-[#E8611A] animate-pulse" />
-              <span className="text-[#E8611A] text-sm font-semibold">Beschikbaar in Groningen</span>
+              <span className="text-[#E8611A] text-sm font-semibold">Lancering 1 juli · Groningen</span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight">
@@ -34,30 +34,24 @@ export default function Hero() {
             </p>
 
             <div id="download" className="flex flex-col sm:flex-row gap-3 pt-2">
-              <a
-                href="#"
-                className="group flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black font-bold px-6 py-4 rounded-2xl transition-all text-sm sm:text-base"
-              >
+              <div className="group flex items-center justify-center gap-3 bg-white/5 border border-white/10 text-white font-bold px-6 py-4 rounded-2xl text-sm sm:text-base cursor-default">
                 <AppleIcon />
                 <span>
-                  <span className="block text-xs font-normal text-gray-500 leading-none mb-0.5">Download in de</span>
+                  <span className="block text-xs font-normal text-gray-400 leading-none mb-0.5">Binnenkort in de</span>
                   App Store
                 </span>
-              </a>
-              <a
-                href="#"
-                className="group flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black font-bold px-6 py-4 rounded-2xl transition-all text-sm sm:text-base"
-              >
+              </div>
+              <div className="group flex items-center justify-center gap-3 bg-white/5 border border-white/10 text-white font-bold px-6 py-4 rounded-2xl text-sm sm:text-base cursor-default">
                 <PlayStoreIcon />
                 <span>
-                  <span className="block text-xs font-normal text-gray-500 leading-none mb-0.5">Beschikbaar op</span>
+                  <span className="block text-xs font-normal text-gray-400 leading-none mb-0.5">Binnenkort op</span>
                   Google Play
                 </span>
-              </a>
+              </div>
             </div>
 
-            <p className="text-gray-600 text-sm">
-              Gratis te downloaden · Geen abonnement
+            <p className="text-gray-500 text-sm">
+              Beschikbaar vanaf 1 juli 2026 · Gratis · Geen abonnement
             </p>
           </div>
 

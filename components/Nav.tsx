@@ -27,8 +27,11 @@ export default function Nav() {
           <a href="/" className="hidden sm:block text-sm text-gray-400 hover:text-white transition-colors font-medium">
             Home
           </a>
-          <a href="/#founding-member" className="text-sm text-gray-400 hover:text-white transition-colors font-medium">
+          <a href="/#founding-member" className="hidden sm:block text-sm text-gray-400 hover:text-white transition-colors font-medium">
             Founding Member
+          </a>
+          <a href="/vertegenwoordiger" className="text-sm text-gray-400 hover:text-white transition-colors font-medium whitespace-nowrap">
+            Vertegenwoordiger worden
           </a>
         </div>
 

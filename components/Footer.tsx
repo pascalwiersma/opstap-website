@@ -64,10 +64,6 @@ export default function Footer() {
           <p className="text-gray-600 text-xs">
             © {new Date().getFullYear()} Pascal Services. Alle rechten voorbehouden.
           </p>
-          <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E8611A] animate-pulse" />
-            <span className="text-xs text-gray-500">Lancering 1 juli 2026 · Groningen</span>
-          </div>
           <SocialIcons />
         </div>
       </div>

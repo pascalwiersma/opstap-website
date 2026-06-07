@@ -8,7 +8,7 @@ export default function SocialIcons({ size = 'md' }: { size?: 'sm' | 'md' }) {
         href="https://www.instagram.com/opstap_app/"
         target="_blank"
         rel="noopener noreferrer"
-        className={`${dim} rounded-lg bg-white/5 hover:bg-[#E8611A]/20 border border-white/8 hover:border-[#E8611A]/30 flex items-center justify-center text-gray-500 hover:text-[#E8611A] transition-all`}
+        className={`${dim} flex items-center justify-center text-[#E8611A] hover:opacity-70 transition-opacity`}
         aria-label="Instagram"
       >
         <svg className={icon} fill="currentColor" viewBox="0 0 24 24">
@@ -19,7 +19,7 @@ export default function SocialIcons({ size = 'md' }: { size?: 'sm' | 'md' }) {
         href="https://www.linkedin.com/search/results/groups/?keywords=OpStap&origin=SWITCH_SEARCH_VERTICAL"
         target="_blank"
         rel="noopener noreferrer"
-        className={`${dim} rounded-lg bg-white/5 hover:bg-[#E8611A]/20 border border-white/8 hover:border-[#E8611A]/30 flex items-center justify-center text-gray-500 hover:text-[#E8611A] transition-all`}
+        className={`${dim} flex items-center justify-center text-[#E8611A] hover:opacity-70 transition-opacity`}
         aria-label="LinkedIn"
       >
         <svg className={icon} fill="currentColor" viewBox="0 0 24 24">

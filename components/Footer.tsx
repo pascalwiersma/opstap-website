@@ -33,14 +33,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 mb-16">
           {/* Logo + omschrijving */}
           <div className="col-span-2 sm:col-span-1 flex flex-col gap-4">
-            <div className="flex items-center gap-2.5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo-transparant.png" alt="OpStap" className="w-8 h-8 object-contain" />
-              <span className="text-white font-bold text-lg">OpStap</span>
-            </div>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Eén knop. Een groep. Een avond die er was.
-            </p>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-transparant.png" alt="OpStap" className="w-20 h-20 object-contain" />
             <p className="text-gray-600 text-xs">Een product van Pascal Services</p>
           </div>
 

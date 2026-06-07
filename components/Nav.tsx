@@ -31,13 +31,13 @@ export default function Nav() {
           </a>
         </div>
 
-        {/* Midden: logo */}
+        {/* Midden: logo alleen */}
         <div className="absolute left-1/2 -translate-x-1/2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo-transparant.png"
             alt="OpStap"
-            className="w-12 h-12 object-contain drop-shadow-lg"
+            className="w-11 h-11 object-contain drop-shadow-lg"
           />
         </div>
 

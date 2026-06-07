@@ -24,10 +24,10 @@ export default function Nav() {
 
         {/* Links */}
         <div className="flex items-center gap-4 sm:gap-6 flex-1">
-          <a href="#hoe-het-werkt" className="hidden sm:block text-sm text-gray-400 hover:text-white transition-colors font-medium">
-            Hoe het werkt
+          <a href="/" className="hidden sm:block text-sm text-gray-400 hover:text-white transition-colors font-medium">
+            Home
           </a>
-          <a href="#founding-member" className="text-sm text-gray-400 hover:text-white transition-colors font-medium">
+          <a href="/#founding-member" className="text-sm text-gray-400 hover:text-white transition-colors font-medium">
             Founding Member
           </a>
         </div>

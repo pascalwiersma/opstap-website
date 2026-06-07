@@ -19,7 +19,7 @@ export default function Nav() {
         voorbijCountdown ? 'top-0' : 'top-10'
       }`}
     >
-      <nav className="pointer-events-auto max-w-4xl mx-auto h-14 flex items-center justify-between px-5 rounded-2xl bg-[#161616]/90 backdrop-blur-xl border border-white/8 shadow-2xl shadow-black/40">
+      <nav className="pointer-events-auto max-w-4xl mx-auto h-14 flex items-center justify-between px-5 rounded-2xl bg-[#1E1E1E]/95 backdrop-blur-xl shadow-2xl shadow-black/50">
 
         {/* Links */}
         <div className="flex items-center gap-4 sm:gap-6 flex-1">

@@ -12,10 +12,10 @@ export default function Footer() {
             </div>
             <p className="text-gray-500 text-sm">Een product van Pascal Services</p>
             <a
-              href="mailto:info@pascal.services"
+              href="mailto:info@opstap.app"
               className="text-gray-500 hover:text-[#E8611A] text-sm transition-colors"
             >
-              info@pascal.services
+              info@opstap.app
             </a>
           </div>
 

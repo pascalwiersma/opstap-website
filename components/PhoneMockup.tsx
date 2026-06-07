@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const SCREENSHOTS = [
-  { src: "/screenshot.png", alt: "OpStap inchecken scherm" },
   { src: "/screenshot-2.png", alt: "OpStap kaart scherm" },
+  { src: "/screenshot.png", alt: "OpStap inchecken scherm" },
 ];
 
 export default function PhoneMockup() {

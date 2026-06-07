@@ -1,7 +1,24 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+
 export default function Nav() {
+  const [voorbijCountdown, setVoorbijCountdown] = useState(false)
+
+  useEffect(() => {
+    // Countdown balk is ~40px hoog
+    const check = () => setVoorbijCountdown(window.scrollY > 40)
+    check()
+    window.addEventListener('scroll', check, { passive: true })
+    return () => window.removeEventListener('scroll', check)
+  }, [])
+
   return (
-    // Countdown bar is 36px hoog, nav floats 12px eronder
-    <div className="fixed top-9 left-0 right-0 z-40 px-4 sm:px-6 pointer-events-none">
+    <div
+      className={`fixed left-0 right-0 z-40 px-4 sm:px-6 pt-3 pointer-events-none transition-[top] duration-300 ${
+        voorbijCountdown ? 'top-0' : 'top-10'
+      }`}
+    >
       <nav className="pointer-events-auto max-w-4xl mx-auto h-14 flex items-center justify-between px-5 rounded-2xl bg-[#161616]/90 backdrop-blur-xl border border-white/8 shadow-2xl shadow-black/40">
 
         {/* Links */}
@@ -20,7 +37,7 @@ export default function Nav() {
           <img
             src="/logo-transparant.png"
             alt="OpStap"
-            className="w-16 h-16 object-contain drop-shadow-lg -mt-4"
+            className="w-12 h-12 object-contain drop-shadow-lg"
           />
         </div>
 

@@ -27,7 +27,7 @@ export default function Countdown() {
   if (!rest) return null
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-[#E8611A] flex items-center justify-center gap-3 py-2 text-white text-xs sm:text-sm font-medium">
+    <div className="w-full bg-[#E8611A] flex items-center justify-center gap-3 py-2.5 text-white text-xs font-medium">
       <span className="opacity-80">OpStap lanceert over</span>
       <div className="flex items-center gap-2">
         <Blok waarde={rest.dagen} label="dagen" />
@@ -45,7 +45,7 @@ export default function Countdown() {
 function Blok({ waarde, label }: { waarde: number; label: string }) {
   return (
     <div className="flex items-baseline gap-0.5">
-      <span className="font-black tabular-nums text-base sm:text-lg leading-none">
+      <span className="font-black tabular-nums text-sm leading-none">
         {String(waarde).padStart(2, '0')}
       </span>
       <span className="text-white/70 text-xs">{label}</span>

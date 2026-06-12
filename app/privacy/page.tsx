@@ -134,10 +134,12 @@ export default function PrivacyPage() {
           titel: '8. Contactgegevens',
           inhoud: (
             <>
-              <p>Pascal Services</p>
-              <p>Groningen, Nederland</p>
+              <p><strong className="text-white">Pascal Services</strong></p>
+              <p>Hoornsediep 34, 9725 HK Groningen</p>
+              <p>Tel: <a href="tel:0853016480" className="text-[#E8611A] hover:underline">085 301 6480</a></p>
               <p>E-mail: <a href="mailto:info@opstap.app" className="text-[#E8611A] hover:underline">info@opstap.app</a></p>
               <p>Website: opstap.app</p>
+              <p className="mt-2 text-gray-500">KvK: 92166474 · BTW: NL004941205B42</p>
             </>
           ),
         },

@@ -7,7 +7,7 @@ export default function VoorwaardenPage() {
   return (
     <LegalLayout
       titel="Gebruiksvoorwaarden"
-      bijwerking="7 juni 2026"
+      bijwerking="12 juni 2026"
       secties={[
         {
           titel: 'Inleiding',
@@ -76,15 +76,27 @@ export default function VoorwaardenPage() {
           inhoud: <p>OpStap kan het gebruik beëindigen of toegang blokkeren bij overtreding van deze voorwaarden. De gebruiker kan het account op elk moment verwijderen via de instellingen in de app.</p>,
         },
         {
-          titel: '8. Toepasselijk recht',
+          titel: '8. Wijziging van de voorwaarden',
+          inhoud: (
+            <>
+              <p>OpStap behoudt zich het recht voor deze gebruiksvoorwaarden op elk moment te wijzigen. Bij een wezenlijke wijziging ontvangen gebruikers een melding via de app of per e-mail, ten minste zeven dagen voor de ingangsdatum.</p>
+              <p className="mt-2">Door de applicatie te blijven gebruiken na de ingangsdatum van een wijziging, aanvaardt de gebruiker de gewijzigde voorwaarden. Wie niet akkoord gaat, dient het gebruik te staken en het account te verwijderen via de instellingen in de app.</p>
+            </>
+          ),
+        },
+        {
+          titel: '9. Toepasselijk recht',
           inhoud: <p>Op deze gebruiksvoorwaarden is uitsluitend Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter te Groningen.</p>,
         },
         {
-          titel: '9. Contactgegevens',
+          titel: '10. Contactgegevens',
           inhoud: (
             <>
-              <p>Pascal Services · Groningen, Nederland</p>
+              <p><strong className="text-white">Pascal Services</strong></p>
+              <p>Hoornsediep 34, 9725 HK Groningen</p>
+              <p>Tel: <a href="tel:0853016480" className="text-[#E8611A] hover:underline">085 301 6480</a></p>
               <p>E-mail: <a href="mailto:info@opstap.app" className="text-[#E8611A] hover:underline">info@opstap.app</a></p>
+              <p className="mt-2 text-gray-500">KvK: 92166474 · BTW: NL004941205B42</p>
             </>
           ),
         },

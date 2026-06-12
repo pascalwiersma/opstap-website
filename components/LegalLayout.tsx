@@ -11,9 +11,13 @@ interface Props {
   titel: string
   bijwerking: string
   secties: Section[]
+  lang?: 'nl' | 'en'
 }
 
-export default function LegalLayout({ titel, bijwerking, secties }: Props) {
+export default function LegalLayout({ titel, bijwerking, secties, lang = 'nl' }: Props) {
+  const labels = lang === 'en'
+    ? { updated: 'Last updated:', contact: 'Questions? Send an email to' }
+    : { updated: 'Laatste bijwerking:', contact: 'Vragen? Stuur een e-mail naar' }
   return (
     <div className="min-h-screen bg-[#0D0D0D] text-white">
       <Countdown />
@@ -23,7 +27,7 @@ export default function LegalLayout({ titel, bijwerking, secties }: Props) {
         {/* Header */}
         <div className="mb-12 pb-8 border-b border-white/10">
           <h1 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">{titel}</h1>
-          <p className="text-gray-500 text-sm">Laatste bijwerking: {bijwerking}</p>
+          <p className="text-gray-500 text-sm">{labels.updated} {bijwerking}</p>
         </div>
 
         {/* Secties */}
@@ -41,7 +45,7 @@ export default function LegalLayout({ titel, bijwerking, secties }: Props) {
         {/* Contact */}
         <div className="mt-16 pt-8 border-t border-white/10">
           <p className="text-gray-500 text-sm">
-            Vragen? Stuur een e-mail naar{' '}
+            {labels.contact}{' '}
             <a href="mailto:info@opstap.app" className="text-[#E8611A] hover:underline">
               info@opstap.app
             </a>

@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     description: "Check in, wij maken een groep op basis van jouw interesses. Elke avond om 22:00.",
     locale: "nl_NL",
     type: "website",
+    images: [
+      {
+        url: "/logo-transparant.png",
+        width: 1200,
+        height: 630,
+        alt: "OpStap logo",
+      },
+    ],
   },
 };
 

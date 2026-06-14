@@ -60,7 +60,7 @@ export default function Verhaal() {
               </p>
               <p className="text-white/90 font-medium">
                 Dus dacht ik: wat als je gewoon op één knop drukt? Geen planning, geen groep aanmaken.
-                Gewoon inchecken, en om 22:00 word je gematcht met mensen die hetzelfde profiel hebben
+                Gewoon inchecken, en om 20:00 word je gematcht met mensen die hetzelfde profiel hebben
                 als jij en ook vanavond de stad in willen.
               </p>
               <p>

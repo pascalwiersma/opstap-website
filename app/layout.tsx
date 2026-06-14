@@ -15,10 +15,10 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "OpStap — Niemand om mee op stap te gaan?",
-  description: "OpStap koppelt je aan nieuwe mensen die ook vanavond de stad in willen. Check in, wij maken een groep op basis van jouw interesses. Elke avond om 22:00.",
+  description: "OpStap koppelt je aan nieuwe mensen die ook vanavond de stad in willen. Check in, wij maken een groep op basis van jouw interesses. Elke avond om 20:00.",
   openGraph: {
     title: "OpStap — Niemand om mee op stap te gaan?",
-    description: "Check in, wij maken een groep op basis van jouw interesses. Elke avond om 22:00.",
+    description: "Check in, wij maken een groep op basis van jouw interesses. Elke avond om 20:00.",
     locale: "nl_NL",
     type: "website",
   },

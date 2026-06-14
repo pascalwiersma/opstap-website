@@ -12,7 +12,7 @@ const STAPPEN = [
   },
   {
     nummer: "02",
-    titel: "Om 22:00 krijg je een match",
+    titel: "Om 20:00 krijg je een match",
     beschrijving:
       "Ons algoritme koppelt je aan mensen met dezelfde interesses en favoriete plekken in jouw stad. Je krijgt direct een pushmelding.",
     icoon: (

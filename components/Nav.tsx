@@ -49,7 +49,7 @@ export default function Nav() {
         <div className="flex items-center gap-3 flex-1 justify-end">
           <div className="hidden sm:flex items-center gap-1.5 mr-1">
             <span className="w-1.5 h-1.5 rounded-full bg-[#E8611A] animate-pulse" />
-            <span className="text-xs text-gray-400 font-medium">1 juli 2026</span>
+            <span className="text-xs text-gray-400 font-medium">1 augustus 2026</span>
           </div>
           <SocialIcons size="sm" />
         </div>

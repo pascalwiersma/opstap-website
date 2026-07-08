@@ -34,7 +34,7 @@ export default function FoundingMember() {
                 <span className="text-xl">📅</span>
                 <div>
                   <p className="text-white/60 text-xs">Beschikbaar vanaf</p>
-                  <p className="text-white font-black text-lg leading-none">1 juli 2026</p>
+                  <p className="text-white font-black text-lg leading-none">1 augustus 2026</p>
                 </div>
               </div>
               <p className="text-white/60 text-xs text-center">App Store · Google Play</p>

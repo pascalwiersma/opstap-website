@@ -14,7 +14,7 @@ export default function Hero() {
           <div className="flex flex-col gap-6">
             <div className="inline-flex items-center gap-2 bg-[#E8611A]/15 border border-[#E8611A]/30 rounded-full px-4 py-1.5 w-fit">
               <span className="w-2 h-2 rounded-full bg-[#E8611A] animate-pulse" />
-              <span className="text-[#E8611A] text-sm font-semibold">Lancering 1 juli · Groningen</span>
+              <span className="text-[#E8611A] text-sm font-semibold">Lancering 1 augustus · Groningen</span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight">
@@ -52,7 +52,7 @@ export default function Hero() {
             </div>
 
             <p className="text-gray-500 text-sm">
-              Beschikbaar vanaf 1 juli 2026 · Gratis · Geen abonnement
+              Beschikbaar vanaf 1 augustus 2026 · Gratis · Geen abonnement
             </p>
           </div>
 

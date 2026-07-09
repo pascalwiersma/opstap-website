@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-const LANCERING = new Date('2026-07-01T10:00:00Z') // 12:00 Amsterdam (UTC+2 zomer)
+const LANCERING = new Date('2026-08-01T10:00:00Z') // 12:00 Amsterdam (UTC+2 zomer)
 
 function berekenRest() {
   const nu = Date.now()

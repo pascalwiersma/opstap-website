@@ -2,8 +2,6 @@ import Nav from "@/components/Nav";
 import Countdown from "@/components/Countdown";
 import Hero from "@/components/Hero";
 import HoeHetWerkt from "@/components/HoeHetWerkt";
-import Verhaal from "@/components/Verhaal";
-import FoundingMember from "@/components/FoundingMember";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -15,8 +13,6 @@ export default function Home() {
       <main>
         <Hero />
         <HoeHetWerkt />
-        <Verhaal />
-        <FoundingMember />
         <Contact />
       </main>
       <Footer />

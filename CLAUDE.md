@@ -4,7 +4,7 @@
 OpStap Website is de publieke marketingwebsite (opstap.app): landingspagina,
 voorwaarden, privacybeleid, richtlijnen en account-verwijdering.
 Gebouwd door Pascal Wiersma via Pascal Services, Groningen.
-Lanceringsdatum app: 1 augustus 2026.
+Lanceringsdatum app: 1 september 2026.
 
 ## Repositories
 - `opstap` — React Native app (iOS + Android)

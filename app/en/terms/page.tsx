@@ -1,7 +1,14 @@
 import LegalLayout from '@/components/LegalLayout'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Terms of Service — OpStap' }
+export const metadata: Metadata = {
+  title: 'Terms of Service — OpStap',
+  description: 'The terms of service for the OpStap app: what you can expect and what is expected of you as a user.',
+  alternates: {
+    canonical: '/en/terms',
+    languages: { 'nl-NL': '/voorwaarden' },
+  },
+}
 
 export default function TermsPage() {
   return (

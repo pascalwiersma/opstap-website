@@ -1,7 +1,14 @@
 import LegalLayout from '@/components/LegalLayout'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Gebruiksvoorwaarden — OpStap' }
+export const metadata: Metadata = {
+  title: 'Gebruiksvoorwaarden — OpStap',
+  description: 'De gebruiksvoorwaarden voor de OpStap-app: wat mag, wat niet, en waar je aan toe bent als gebruiker.',
+  alternates: {
+    canonical: '/voorwaarden',
+    languages: { 'en-US': '/en/terms' },
+  },
+}
 
 export default function VoorwaardenPage() {
   return (

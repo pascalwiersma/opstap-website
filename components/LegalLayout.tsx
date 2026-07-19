@@ -19,7 +19,7 @@ export default function LegalLayout({ titel, bijwerking, secties, lang = 'nl' }:
     ? { updated: 'Last updated:', contact: 'Questions? Send an email to' }
     : { updated: 'Laatste bijwerking:', contact: 'Vragen? Stuur een e-mail naar' }
   return (
-    <div className="min-h-screen bg-[#0D0D0D] text-white">
+    <div lang={lang} className="min-h-screen bg-[#0D0D0D] text-white">
       <Countdown />
       <Nav />
 

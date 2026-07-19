@@ -1,7 +1,14 @@
 import LegalLayout from '@/components/LegalLayout'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Privacy Policy — OpStap' }
+export const metadata: Metadata = {
+  title: 'Privacy Policy — OpStap',
+  description: 'Learn how OpStap handles your personal data: what we collect, why, and how we keep it safe.',
+  alternates: {
+    canonical: '/en/privacy',
+    languages: { 'nl-NL': '/privacy' },
+  },
+}
 
 export default function PrivacyPage() {
   return (

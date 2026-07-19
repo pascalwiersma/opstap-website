@@ -6,8 +6,7 @@ const LINKS = [
     kop: 'Product',
     items: [
       { label: 'Hoe het werkt', href: '/#hoe-het-werkt' },
-      { label: 'Founding Member', href: '/#founding-member' },
-      { label: 'Het verhaal', href: '/#verhaal' },
+      { label: 'Bedrijven & organisaties', href: '/bedrijven' },
     ],
   },
   {
@@ -21,7 +20,8 @@ const LINKS = [
   {
     kop: 'Contact',
     items: [
-      { label: 'info@opstap.app', href: 'mailto:info@opstap.app' },
+      { label: 'Pers', href: '/pers' },
+      { label: 'Contactformulier', href: '/contact' },
     ],
   },
 ]

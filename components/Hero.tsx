@@ -11,12 +11,7 @@ export default function Hero() {
       <div className="relative max-w-6xl mx-auto px-6 w-full py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Tekst */}
-          <div className="flex flex-col gap-6">
-            <div className="inline-flex items-center gap-2 bg-[#E8611A]/15 border border-[#E8611A]/30 rounded-full px-4 py-1.5 w-fit">
-              <span className="w-2 h-2 rounded-full bg-[#E8611A] animate-pulse" />
-              <span className="text-[#E8611A] text-sm font-semibold">Lancering 1 augustus · Groningen</span>
-            </div>
-
+          <div className="order-2 lg:order-1 flex flex-col gap-6">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight">
               Niemand om{" "}
               <br className="hidden sm:block" />
@@ -51,13 +46,10 @@ export default function Hero() {
               </div>
             </div>
 
-            <p className="text-gray-500 text-sm">
-              Beschikbaar vanaf 1 augustus 2026 · Gratis · Geen abonnement
-            </p>
           </div>
 
           {/* Telefoon */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <PhoneMockup />
           </div>
         </div>

@@ -3,17 +3,22 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const BESCHIKBARE_PROVINCIES = [
-  'Friesland', 'Drenthe', 'Overijssel', 'Flevoland', 'Gelderland',
-  'Utrecht', 'Noord-Holland', 'Zuid-Holland', 'Zeeland', 'Noord-Brabant', 'Limburg',
-]
+const TYPES = ['Horeca / club / café', 'Gemeente / (semi-)overheid', 'Anders'] as const
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
-export default function Aanmeldformulier() {
+export default function Samenwerkformulier() {
   const [status, setStatus] = useState<Status>('idle')
   const [fout, setFout] = useState('')
-  const [form, setForm] = useState({ naam: '', email: '', provincie: '', motivatie: '', akkoord: false })
+  const [form, setForm] = useState({
+    naam: '',
+    organisatie: '',
+    type: '',
+    email: '',
+    telefoon: '',
+    bericht: '',
+    akkoord: false,
+  })
 
   function update(key: keyof typeof form, value: string) {
     setForm(prev => ({ ...prev, [key]: value }))
@@ -24,7 +29,7 @@ export default function Aanmeldformulier() {
     setStatus('loading')
     setFout('')
 
-    const res = await fetch('/api/aanmelden', {
+    const res = await fetch('/api/bedrijven', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),
@@ -49,7 +54,7 @@ export default function Aanmeldformulier() {
         </div>
         <h3 className="text-2xl font-black">Aanmelding ontvangen!</h3>
         <p className="text-gray-400 max-w-sm leading-relaxed">
-          Bedankt, {form.naam}. We nemen zo snel mogelijk contact met je op via {form.email}.
+          Bedankt, {form.naam}. Zodra we samenwerkingen opzetten nemen we contact op via {form.email}.
         </p>
       </div>
     )
@@ -70,6 +75,35 @@ export default function Aanmeldformulier() {
           />
         </div>
         <div className="flex flex-col gap-1.5">
+          <label className="text-sm font-medium text-gray-300">Organisatie</label>
+          <input
+            type="text"
+            required
+            value={form.organisatie}
+            onChange={e => update('organisatie', e.target.value)}
+            placeholder="Naam van je bedrijf of organisatie"
+            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-1.5">
+        <label className="text-sm font-medium text-gray-300">Type organisatie</label>
+        <select
+          required
+          value={form.type}
+          onChange={e => update('type', e.target.value)}
+          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#E8611A]/50 transition-colors appearance-none"
+        >
+          <option value="" disabled>Kies een type</option>
+          {TYPES.map(t => (
+            <option key={t} value={t}>{t}</option>
+          ))}
+        </select>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium text-gray-300">E-mailadres</label>
           <input
             type="email"
@@ -80,35 +114,30 @@ export default function Aanmeldformulier() {
             className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
           />
         </div>
-      </div>
-
-      <div className="flex flex-col gap-1.5">
-        <label className="text-sm font-medium text-gray-300">Provincie</label>
-        <select
-          required
-          value={form.provincie}
-          onChange={e => update('provincie', e.target.value)}
-          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#E8611A]/50 transition-colors appearance-none"
-        >
-          <option value="" disabled>Kies jouw provincie</option>
-          {BESCHIKBARE_PROVINCIES.map(p => (
-            <option key={p} value={p}>{p}</option>
-          ))}
-        </select>
+        <div className="flex flex-col gap-1.5">
+          <label className="text-sm font-medium text-gray-300">Telefoonnummer <span className="text-gray-600">(optioneel)</span></label>
+          <input
+            type="tel"
+            value={form.telefoon}
+            onChange={e => update('telefoon', e.target.value)}
+            placeholder="06 12345678"
+            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
+          />
+        </div>
       </div>
 
       <div className="flex flex-col gap-1.5">
         <div className="flex items-center justify-between">
-          <label className="text-sm font-medium text-gray-300">Motivatie</label>
-          <span className="text-xs text-gray-600">{form.motivatie.length}/300</span>
+          <label className="text-sm font-medium text-gray-300">Bericht</label>
+          <span className="text-xs text-gray-600">{form.bericht.length}/1000</span>
         </div>
         <textarea
           required
-          maxLength={300}
-          rows={4}
-          value={form.motivatie}
-          onChange={e => update('motivatie', e.target.value)}
-          placeholder="Waarom wil jij vertegenwoordiger worden van OpStap in jouw provincie?"
+          maxLength={1000}
+          rows={5}
+          value={form.bericht}
+          onChange={e => update('bericht', e.target.value)}
+          placeholder="Vertel kort waar je aan denkt en hoe we kunnen samenwerken."
           className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors resize-none"
         />
       </div>
@@ -140,7 +169,7 @@ export default function Aanmeldformulier() {
         disabled={status === 'loading'}
         className="mt-2 bg-[#E8611A] hover:bg-[#d4561a] disabled:opacity-60 text-white font-bold py-4 rounded-2xl transition-colors shadow-xl shadow-[#E8611A]/20 text-sm"
       >
-        {status === 'loading' ? 'Versturen…' : 'Aanmelding versturen'}
+        {status === 'loading' ? 'Versturen…' : 'Interesse doorgeven'}
       </button>
     </form>
   )

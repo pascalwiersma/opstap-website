@@ -8,6 +8,7 @@ import { FiMapPin, FiEye, FiUsers } from 'react-icons/fi'
 export const metadata: Metadata = {
   title: 'Word vertegenwoordiger — OpStap',
   description: 'Als vertegenwoordiger van OpStap zorg jij ervoor dat de app lokaal klopt. Jij kent de stad, jij weet welke plekken erbij horen.',
+  alternates: { canonical: '/vertegenwoordiger' },
 }
 
 const TAKEN = [
@@ -112,7 +113,7 @@ export default function VertegenwoordigerPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'Vrijwilligerswerk',
-                    'Founding Member badge op je profiel',
+                    'Provincie Vertegenwoordiger badge op je profiel',
                     'Vroege toegang tot nieuwe functies',
                   ].map(item => (
                     <li key={item} className="flex items-center gap-3 text-sm text-gray-300">

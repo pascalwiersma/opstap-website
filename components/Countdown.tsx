@@ -2,17 +2,27 @@
 
 import { useEffect, useState } from 'react'
 
-const LANCERING = new Date('2026-08-01T10:00:00Z') // 12:00 Amsterdam (UTC+2 zomer)
+const LANCERING = new Date('2026-09-01T10:00:00Z') // 12:00 Amsterdam (UTC+2 zomer)
 
 function berekenRest() {
-  const nu = Date.now()
-  const diff = LANCERING.getTime() - nu
-  if (diff <= 0) return null
+  const nu = new Date()
+  if (nu.getTime() >= LANCERING.getTime()) return null
+
+  let maanden = (LANCERING.getFullYear() - nu.getFullYear()) * 12 + (LANCERING.getMonth() - nu.getMonth())
+  let referentie = new Date(nu)
+  referentie.setMonth(referentie.getMonth() + maanden)
+  if (referentie.getTime() > LANCERING.getTime()) {
+    maanden -= 1
+    referentie = new Date(nu)
+    referentie.setMonth(referentie.getMonth() + maanden)
+  }
+
+  const diff = LANCERING.getTime() - referentie.getTime()
   const dagen = Math.floor(diff / (1000 * 60 * 60 * 24))
   const uren = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
   const minuten = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
   const seconden = Math.floor((diff % (1000 * 60)) / 1000)
-  return { dagen, uren, minuten, seconden }
+  return { maanden, dagen, uren, minuten, seconden }
 }
 
 export default function Countdown() {
@@ -30,6 +40,12 @@ export default function Countdown() {
     <div className="w-full bg-[#E8611A] flex items-center justify-center gap-3 py-2.5 text-white text-xs font-medium">
       <span className="opacity-80">OpStap lanceert over</span>
       <div className="flex items-center gap-2">
+        {rest.maanden > 0 && (
+          <>
+            <Blok waarde={rest.maanden} label="maand" />
+            <Sep />
+          </>
+        )}
         <Blok waarde={rest.dagen} label="dagen" />
         <Sep />
         <Blok waarde={rest.uren} label="uur" />

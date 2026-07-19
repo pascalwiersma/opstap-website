@@ -1,7 +1,14 @@
 import LegalLayout from '@/components/LegalLayout'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Delete your account — OpStap' }
+export const metadata: Metadata = {
+  title: 'Delete your account — OpStap',
+  description: 'How to delete your OpStap account and what data gets removed.',
+  alternates: {
+    canonical: '/en/account-deletion',
+    languages: { 'nl-NL': '/account-verwijderen' },
+  },
+}
 
 export default function AccountDeletionPage() {
   return (

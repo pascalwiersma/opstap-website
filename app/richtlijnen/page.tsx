@@ -1,7 +1,11 @@
 import LegalLayout from '@/components/LegalLayout'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Community Richtlijnen — OpStap' }
+export const metadata: Metadata = {
+  title: 'Community Richtlijnen — OpStap',
+  description: 'De richtlijnen die gelden voor alle OpStap-gebruikers, zodat iedereen veilig en prettig een avond uit kan.',
+  alternates: { canonical: '/richtlijnen' },
+}
 
 export default function RichtlijnenPage() {
   return (

@@ -26,7 +26,7 @@ export default function PrivacyPage() {
             <>
               <p><strong className="text-white">Accountgegevens:</strong> voornaam, gebruikersnaam, e-mailadres, telefoonnummer, geboortedatum, profielfoto.</p>
               <p><strong className="text-white">Profielgegevens:</strong> interesses, favoriete muziekstijlen, favoriete venues, groepsgroottevoorkeur, geplaatste foto&apos;s.</p>
-              <p><strong className="text-white">Identiteitsverificatie:</strong> verificatie via partner Didit. Wij ontvangen uitsluitend een bevestiging van de geslaagde verificatie en slaan geen onderliggende documenten op.</p>
+              <p><strong className="text-white">Identiteitsverificatie:</strong> verificatie via partner Didit. Hierbij worden voornaam, achternaam, geboortedatum, leeftijd, geslacht en nationaliteit verwerkt om uw identiteit te bevestigen. Wij slaan zelf geen onderliggende documenten op.</p>
               <p><strong className="text-white">Gebruik van de applicatie:</strong> technische gegevens (IP-adres, apparaat-ID, push token), tijdstip en frequentie van inchecks, matchgegevens, betrouwbaarheidsscore en locatiegegevens bij het instellen van een afspraakpunt.</p>
             </>
           ),

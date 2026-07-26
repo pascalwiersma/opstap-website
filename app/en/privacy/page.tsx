@@ -27,7 +27,7 @@ export default function PrivacyPage() {
             <>
               <p><strong className="text-white">Account data:</strong> first name, username, email address, phone number, date of birth, profile photo.</p>
               <p><strong className="text-white">Profile data:</strong> interests, favourite music styles, favourite venues, group size preference, uploaded photos.</p>
-              <p><strong className="text-white">Identity verification:</strong> verification via our partner Didit. We receive only a confirmation of successful verification and do not store the underlying documents.</p>
+              <p><strong className="text-white">Identity verification:</strong> verification via our partner Didit. This processes first name, last name, date of birth, age, gender, and nationality to confirm your identity. We do not store the underlying documents ourselves.</p>
               <p><strong className="text-white">App usage:</strong> technical data (IP address, device ID, push token), time and frequency of check-ins, match data, trust score, and location data when setting a meeting point.</p>
             </>
           ),

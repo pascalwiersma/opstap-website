@@ -1,6 +1,6 @@
-import Nav from './Nav'
 import Countdown from './Countdown'
 import Footer from './Footer'
+import Nav from './Nav'
 
 interface Section {
   titel: string
@@ -46,8 +46,8 @@ export default function LegalLayout({ titel, bijwerking, secties, lang = 'nl' }:
         <div className="mt-16 pt-8 border-t border-white/10">
           <p className="text-gray-500 text-sm">
             {labels.contact}{' '}
-            <a href="mailto:info@opstap.app" className="text-[#E8611A] hover:underline">
-              info@opstap.app
+            <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">
+              opstap@pascal.services
             </a>
           </p>
         </div>

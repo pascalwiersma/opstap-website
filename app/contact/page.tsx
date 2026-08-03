@@ -1,7 +1,7 @@
-import type { Metadata } from 'next'
-import Nav from '@/components/Nav'
 import Countdown from '@/components/Countdown'
 import Footer from '@/components/Footer'
+import Nav from '@/components/Nav'
+import type { Metadata } from 'next'
 import Contactformulier from './Contactformulier'
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const INFO = [
   {
     titel: 'Algemeen',
-    email: 'info@opstap.app',
+    email: 'opstap@pascal.services',
   },
   {
     titel: 'Pers',

@@ -38,7 +38,7 @@ export default function VoorwaardenPage() {
               <li>De applicatie is uitsluitend bedoeld voor persoonlijk, niet-commercieel gebruik.</li>
               <li>De gebruiker garandeert dat ingevoerde gegevens juist, actueel en volledig zijn.</li>
               <li>Lastigvallen, bedreigen of misleiden van andere gebruikers is verboden.</li>
-              <li>Bugs of beveiligingslekken dienen onverwijld gemeld te worden via info@opstap.app.</li>
+              <li>Bugs of beveiligingslekken dienen onverwijld gemeld te worden via opstap@pascal.services.</li>
               <li>No-shows kunnen leiden tot verlaging van de betrouwbaarheidsscore of blokkering van het account.</li>
             </ul>
           ),
@@ -102,7 +102,7 @@ export default function VoorwaardenPage() {
               <p><strong className="text-white">Pascal Services</strong></p>
               <p>Hoornsediep 34, 9725 HK Groningen</p>
               <p>Tel: <a href="tel:0853016480" className="text-[#E8611A] hover:underline">085 301 6480</a></p>
-              <p>E-mail: <a href="mailto:info@opstap.app" className="text-[#E8611A] hover:underline">info@opstap.app</a></p>
+              <p>E-mail: <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">opstap@pascal.services</a></p>
               <p className="mt-2 text-gray-500">KvK: 92166474 · BTW: NL004941205B42</p>
             </>
           ),

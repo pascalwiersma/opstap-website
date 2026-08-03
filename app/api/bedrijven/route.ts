@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server'
 import { escapeHtml, verstuurMail } from '@/lib/mail'
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
   const { naam, organisatie, type, email, telefoon, bericht } = await req.json()
@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
   }
 
   const result = await verstuurMail({
-    to: process.env.CONTACT_TO_EMAIL || 'info@opstap.app',
+    to: process.env.CONTACT_TO_EMAIL || 'opstap@pascal.services',
     subject: `Nieuwe samenwerkingsaanvraag: ${organisatie}`,
     html: `
       <h2>Nieuwe aanmelding via de bedrijvenpagina</h2>

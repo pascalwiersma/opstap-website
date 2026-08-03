@@ -39,7 +39,7 @@ export default function TermsPage() {
               <li>The application is intended solely for personal, non-commercial use.</li>
               <li>The user warrants that all information provided is accurate, current, and complete.</li>
               <li>Harassing, threatening, or deceiving other users is prohibited.</li>
-              <li>Bugs or security vulnerabilities must be reported promptly to info@opstap.app.</li>
+              <li>Bugs or security vulnerabilities must be reported promptly to opstap@pascal.services.</li>
               <li>No-shows may result in a reduction of your trust score or suspension of your account.</li>
             </ul>
           ),
@@ -103,7 +103,7 @@ export default function TermsPage() {
               <p><strong className="text-white">Pascal Services</strong></p>
               <p>Hoornsediep 34, 9725 HK Groningen, the Netherlands</p>
               <p>Tel: <a href="tel:0853016480" className="text-[#E8611A] hover:underline">085 301 6480</a></p>
-              <p>Email: <a href="mailto:info@opstap.app" className="text-[#E8611A] hover:underline">info@opstap.app</a></p>
+              <p>Email: <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">opstap@pascal.services</a></p>
               <p className="mt-2 text-gray-500">CoC: 92166474 · VAT: NL004941205B42</p>
             </>
           ),

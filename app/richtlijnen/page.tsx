@@ -49,7 +49,7 @@ export default function RichtlijnenPage() {
                 <li>Je kunt elke gebruiker rapporteren of blokkeren via het profiel of de groepschat.</li>
                 <li>Alle rapporten worden door het OpStap-team beoordeeld en opgevolgd.</li>
               </ul>
-              <p className="mt-2">Voel je je onveilig? Gebruik de rapporteerknop in de app of neem contact op via <a href="mailto:info@opstap.app" className="text-[#E8611A] hover:underline">info@opstap.app</a>.</p>
+              <p className="mt-2">Voel je je onveilig? Gebruik de rapporteerknop in de app of neem contact op via <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">opstap@pascal.services</a>.</p>
             </>
           ),
         },
@@ -90,7 +90,7 @@ export default function RichtlijnenPage() {
                 <li><strong className="text-white">Tijdelijke blokkering:</strong> herhaald of ernstiger misbruik</li>
                 <li><strong className="text-white">Permanente ban:</strong> ernstige overtredingen of aanhoudend wangedrag</li>
               </ul>
-              <p className="mt-2">Bezwaar maken via <a href="mailto:info@opstap.app" className="text-[#E8611A] hover:underline">info@opstap.app</a>. Wij reageren binnen 5 werkdagen.</p>
+              <p className="mt-2">Bezwaar maken via <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">opstap@pascal.services</a>. Wij reageren binnen 5 werkdagen.</p>
             </>
           ),
         },
@@ -102,7 +102,7 @@ export default function RichtlijnenPage() {
               <ul className="list-disc list-inside space-y-1 mt-2">
                 <li>De rapporteerknop op het profiel van de gebruiker</li>
                 <li>De rapporteerknop in de groepschat</li>
-                <li>E-mail: <a href="mailto:info@opstap.app" className="text-[#E8611A] hover:underline">info@opstap.app</a></li>
+                <li>E-mail: <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">opstap@pascal.services</a></li>
               </ul>
               <p className="mt-2">Alle rapporten zijn vertrouwelijk. Je identiteit wordt niet gedeeld met de gemelde gebruiker.</p>
             </>

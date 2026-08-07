@@ -11,7 +11,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        oranje: "#E8611A",
+        "opstap-orange": "#F1A74E",
+        "opstap-orange-hover": "#ec9d3f",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],

@@ -30,7 +30,7 @@ export default function PhoneMockup() {
   return (
     <div className="relative">
       {/* Glow achter telefoon */}
-      <div className="absolute inset-0 bg-[#E8611A]/15 blur-3xl rounded-full scale-75 pointer-events-none" />
+      <div className="absolute inset-0 bg-opstap-orange/15 blur-3xl rounded-full scale-75 pointer-events-none" />
 
       {/* iPhone frame */}
       <div className="relative w-[260px] sm:w-[300px] mx-auto">
@@ -69,7 +69,7 @@ export default function PhoneMockup() {
               }}
               className={`rounded-full transition-all duration-300 ${
                 i === index
-                  ? "w-4 h-1.5 bg-[#E8611A]"
+                  ? "w-4 h-1.5 bg-opstap-orange"
                   : "w-1.5 h-1.5 bg-white/20 hover:bg-white/40"
               }`}
             />

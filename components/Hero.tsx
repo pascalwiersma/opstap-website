@@ -5,8 +5,8 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-28 overflow-hidden">
       {/* Achtergrond glow */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#E8611A]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#E8611A]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-opstap-orange/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-opstap-orange/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-6 w-full py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -20,7 +20,7 @@ export default function Hero() {
               te gaan?
             </h1>
 
-            <p className="text-xl sm:text-2xl font-bold text-[#E8611A] leading-tight">
+            <p className="text-xl sm:text-2xl font-bold text-opstap-orange leading-tight">
               OpStap koppelt je aan nieuwe mensen.
             </p>
 

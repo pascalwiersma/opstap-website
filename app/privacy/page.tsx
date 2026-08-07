@@ -129,13 +129,13 @@ export default function PrivacyPage() {
                 <li>Recht op gegevensoverdraagbaarheid</li>
                 <li>Recht van bezwaar tegen verwerking op basis van gerechtvaardigd belang</li>
               </ul>
-              <p className="mt-2">Verzoeken richten aan <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">opstap@pascal.services</a>. Wij reageren binnen één maand.</p>
+              <p className="mt-2">Verzoeken richten aan <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">opstap@pascal.services</a>. Wij reageren binnen één maand.</p>
             </>
           ),
         },
         {
           titel: '7. Klachten',
-          inhoud: <p>Klachten kunnen worden ingediend bij de Autoriteit Persoonsgegevens, Postbus 93374, 2509 AJ Den Haag — <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener noreferrer" className="text-[#E8611A] hover:underline">autoriteitpersoonsgegevens.nl</a></p>,
+          inhoud: <p>Klachten kunnen worden ingediend bij de Autoriteit Persoonsgegevens, Postbus 93374, 2509 AJ Den Haag — <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener noreferrer" className="text-opstap-orange hover:underline">autoriteitpersoonsgegevens.nl</a></p>,
         },
         {
           titel: '8. Contactgegevens',
@@ -143,8 +143,8 @@ export default function PrivacyPage() {
             <>
               <p><strong className="text-white">Pascal Services</strong></p>
               <p>Hoornsediep 34, 9725 HK Groningen</p>
-              <p>Tel: <a href="tel:0853016480" className="text-[#E8611A] hover:underline">085 301 6480</a></p>
-              <p>E-mail: <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">opstap@pascal.services</a></p>
+              <p>Tel: <a href="tel:0853016480" className="text-opstap-orange hover:underline">085 301 6480</a></p>
+              <p>E-mail: <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">opstap@pascal.services</a></p>
               <p>Website: opstap.app</p>
               <p className="mt-2 text-gray-500">KvK: 92166474 · BTW: NL004941205B42</p>
             </>

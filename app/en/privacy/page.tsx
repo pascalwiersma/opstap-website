@@ -130,13 +130,13 @@ export default function PrivacyPage() {
                 <li>Right to data portability</li>
                 <li>Right to object to processing based on legitimate interest</li>
               </ul>
-              <p className="mt-2">Requests can be sent to <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">opstap@pascal.services</a>. We will respond within one month.</p>
+              <p className="mt-2">Requests can be sent to <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">opstap@pascal.services</a>. We will respond within one month.</p>
             </>
           ),
         },
         {
           titel: '7. Complaints',
-          inhoud: <p>Complaints may be submitted to the Dutch Data Protection Authority (Autoriteit Persoonsgegevens), P.O. Box 93374, 2509 AJ The Hague — <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener noreferrer" className="text-[#E8611A] hover:underline">autoriteitpersoonsgegevens.nl</a></p>,
+          inhoud: <p>Complaints may be submitted to the Dutch Data Protection Authority (Autoriteit Persoonsgegevens), P.O. Box 93374, 2509 AJ The Hague — <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener noreferrer" className="text-opstap-orange hover:underline">autoriteitpersoonsgegevens.nl</a></p>,
         },
         {
           titel: '8. Contact',
@@ -144,8 +144,8 @@ export default function PrivacyPage() {
             <>
               <p><strong className="text-white">Pascal Services</strong></p>
               <p>Hoornsediep 34, 9725 HK Groningen, the Netherlands</p>
-              <p>Tel: <a href="tel:0853016480" className="text-[#E8611A] hover:underline">085 301 6480</a></p>
-              <p>Email: <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">opstap@pascal.services</a></p>
+              <p>Tel: <a href="tel:0853016480" className="text-opstap-orange hover:underline">085 301 6480</a></p>
+              <p>Email: <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">opstap@pascal.services</a></p>
               <p>Website: opstap.app</p>
               <p className="mt-2 text-gray-500">CoC: 92166474 · VAT: NL004941205B42</p>
             </>

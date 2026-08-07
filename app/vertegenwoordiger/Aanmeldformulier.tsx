@@ -66,7 +66,7 @@ export default function Aanmeldformulier() {
             value={form.naam}
             onChange={e => update('naam', e.target.value)}
             placeholder="Jouw naam"
-            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
+            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors"
           />
         </div>
         <div className="flex flex-col gap-1.5">
@@ -77,7 +77,7 @@ export default function Aanmeldformulier() {
             value={form.email}
             onChange={e => update('email', e.target.value)}
             placeholder="naam@voorbeeld.nl"
-            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
+            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors"
           />
         </div>
       </div>
@@ -88,7 +88,7 @@ export default function Aanmeldformulier() {
           required
           value={form.provincie}
           onChange={e => update('provincie', e.target.value)}
-          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#E8611A]/50 transition-colors appearance-none"
+          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-opstap-orange/50 transition-colors appearance-none"
         >
           <option value="" disabled>Kies jouw provincie</option>
           {BESCHIKBARE_PROVINCIES.map(p => (
@@ -109,7 +109,7 @@ export default function Aanmeldformulier() {
           value={form.motivatie}
           onChange={e => update('motivatie', e.target.value)}
           placeholder="Waarom wil jij vertegenwoordiger worden van OpStap in jouw provincie?"
-          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors resize-none"
+          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors resize-none"
         />
       </div>
 
@@ -119,11 +119,11 @@ export default function Aanmeldformulier() {
           required
           checked={form.akkoord}
           onChange={e => setForm(prev => ({ ...prev, akkoord: e.target.checked }))}
-          className="mt-0.5 w-4 h-4 rounded border-white/20 bg-[#141414] accent-[#E8611A]"
+          className="mt-0.5 w-4 h-4 rounded border-white/20 bg-[#141414] accent-opstap-orange"
         />
         <span>
           Ik ga akkoord met het{' '}
-          <Link href="/privacy" target="_blank" className="text-white underline hover:text-[#E8611A]">
+          <Link href="/privacy" target="_blank" className="text-white underline hover:text-opstap-orange">
             privacybeleid
           </Link>
         </span>
@@ -138,7 +138,7 @@ export default function Aanmeldformulier() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="mt-2 bg-[#E8611A] hover:bg-[#d4561a] disabled:opacity-60 text-white font-bold py-4 rounded-2xl transition-colors shadow-xl shadow-[#E8611A]/20 text-sm"
+        className="mt-2 bg-opstap-orange hover:bg-opstap-orange-hover disabled:opacity-60 text-white font-bold py-4 rounded-2xl transition-colors shadow-xl shadow-opstap-orange/20 text-sm"
       >
         {status === 'loading' ? 'Versturen…' : 'Aanmelding versturen'}
       </button>

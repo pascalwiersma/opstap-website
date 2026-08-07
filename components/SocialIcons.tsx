@@ -9,7 +9,7 @@ export default function SocialIcons({ size = 'md' }: { size?: 'sm' | 'md' }) {
         href="https://www.instagram.com/opstap_app/"
         target="_blank"
         rel="noopener noreferrer"
-        className={`${icon} text-[#E8611A] hover:opacity-70 transition-opacity`}
+        className={`${icon} text-opstap-orange hover:opacity-70 transition-opacity`}
         aria-label="Instagram"
       >
         <FaInstagram />
@@ -18,7 +18,7 @@ export default function SocialIcons({ size = 'md' }: { size?: 'sm' | 'md' }) {
         href="https://www.linkedin.com/search/results/groups/?keywords=OpStap&origin=SWITCH_SEARCH_VERTICAL"
         target="_blank"
         rel="noopener noreferrer"
-        className={`${icon} text-[#E8611A] hover:opacity-70 transition-opacity`}
+        className={`${icon} text-opstap-orange hover:opacity-70 transition-opacity`}
         aria-label="LinkedIn"
       >
         <FaLinkedin />

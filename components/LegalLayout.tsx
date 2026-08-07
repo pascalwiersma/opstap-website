@@ -46,7 +46,7 @@ export default function LegalLayout({ titel, bijwerking, secties, lang = 'nl' }:
         <div className="mt-16 pt-8 border-t border-white/10">
           <p className="text-gray-500 text-sm">
             {labels.contact}{' '}
-            <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">
+            <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">
               opstap@pascal.services
             </a>
           </p>

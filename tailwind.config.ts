@@ -15,7 +15,8 @@ const config: Config = {
         "opstap-orange-hover": "#ec9d3f",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-montserrat)", "system-ui", "sans-serif"],
+        display: ["var(--font-bowlby-one)", "system-ui", "sans-serif"],
       },
     },
   },

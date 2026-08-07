@@ -42,7 +42,7 @@ export default function BedrijvenPage() {
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-opstap-orange/10 rounded-full blur-3xl pointer-events-none" />
           <div className="max-w-3xl mx-auto px-6 text-center relative">
             <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Bedrijven & organisaties</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display leading-[1.05] tracking-tight mb-6">
               Samenwerken<br className="hidden sm:block" />
               <span className="text-opstap-orange"> met OpStap</span>
             </h1>
@@ -59,7 +59,7 @@ export default function BedrijvenPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-14">
               <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Voor wie</p>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Wie we graag spreken</h2>
+              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Wie we graag spreken</h2>
             </div>
             <div className="grid sm:grid-cols-3 gap-6">
               {DOELGROEPEN.map(({ icoon: Icon, titel, tekst }) => (
@@ -80,7 +80,7 @@ export default function BedrijvenPage() {
           <div className="max-w-2xl mx-auto px-6">
             <div className="text-center mb-12">
               <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Interesse doorgeven</p>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Laat het ons weten</h2>
+              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Laat het ons weten</h2>
               <p className="text-gray-400 mt-3 leading-relaxed">
                 Vul het formulier in, dan nemen we contact op zodra we samenwerkingen opzetten.
               </p>

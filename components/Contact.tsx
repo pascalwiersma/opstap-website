@@ -5,7 +5,7 @@ export default function Contact() {
         <div className="rounded-3xl bg-[#141414] border border-white/5 p-8 sm:p-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="flex flex-col gap-2">
             <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest">Contact</p>
-            <h2 className="text-2xl sm:text-3xl font-black text-white">Vragen of ideeën?</h2>
+            <h2 className="text-2xl sm:text-3xl font-display text-white">Vragen of ideeën?</h2>
             <p className="text-gray-400 text-sm max-w-sm leading-relaxed">
               Vul het contactformulier in en we reageren zo snel mogelijk.
             </p>

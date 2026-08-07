@@ -47,7 +47,7 @@ export default function Aanmeldformulier() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-black">Aanmelding ontvangen!</h3>
+        <h3 className="text-2xl font-display">Aanmelding ontvangen!</h3>
         <p className="text-gray-400 max-w-sm leading-relaxed">
           Bedankt, {form.naam}. We nemen zo snel mogelijk contact met je op via {form.email}.
         </p>

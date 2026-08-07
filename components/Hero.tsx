@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Tekst */}
           <div className="order-2 lg:order-1 flex flex-col gap-6">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display leading-[1.05] tracking-tight">
               Niemand om{" "}
               <br className="hidden sm:block" />
               mee op stap{" "}

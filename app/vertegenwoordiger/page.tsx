@@ -60,7 +60,7 @@ export default function VertegenwoordigerPage() {
               <span className="w-2 h-2 rounded-full bg-opstap-orange animate-pulse" />
               <span className="text-opstap-orange text-sm font-semibold">11 provincies beschikbaar</span>
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-6">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display leading-[1.05] tracking-tight mb-6">
               Word vertegenwoordiger<br className="hidden sm:block" />
               <span className="text-opstap-orange"> in jouw provincie</span>
             </h1>
@@ -82,7 +82,7 @@ export default function VertegenwoordigerPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-14">
               <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">De rol</p>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Wat doe je als vertegenwoordiger?</h2>
+              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Wat doe je als vertegenwoordiger?</h2>
             </div>
             <div className="grid sm:grid-cols-3 gap-6">
               {TAKEN.map(({ icoon: Icon, titel, tekst }) => (
@@ -103,7 +103,7 @@ export default function VertegenwoordigerPage() {
           <div className="max-w-4xl mx-auto px-6">
             <div className="text-center mb-12">
               <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Wat je krijgt</p>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Wat krijg je ervoor?</h2>
+              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Wat krijg je ervoor?</h2>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="bg-[#141414] border border-white/5 rounded-2xl p-6 flex flex-col gap-3">
@@ -147,7 +147,7 @@ export default function VertegenwoordigerPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-12">
               <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Beschikbaarheid</p>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Provincies</h2>
+              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Provincies</h2>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
               {PROVINCIES.map(({ naam, bezet }) => (
@@ -182,7 +182,7 @@ export default function VertegenwoordigerPage() {
           <div className="max-w-2xl mx-auto px-6">
             <div className="text-center mb-12">
               <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Aanmelden</p>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Doe mee</h2>
+              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Doe mee</h2>
               <p className="text-gray-400 mt-3 leading-relaxed">
                 Interesse? Vul het formulier in en we nemen contact op.
               </p>

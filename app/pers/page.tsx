@@ -56,7 +56,7 @@ export default function PersPage() {
               <span className="w-2 h-2 rounded-full bg-opstap-orange animate-pulse" />
               <span className="text-opstap-orange text-sm font-semibold">Pers</span>
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-6">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display leading-[1.05] tracking-tight mb-6">
               Persmateriaal<br className="hidden sm:block" />
               <span className="text-opstap-orange"> over OpStap</span>
             </h1>
@@ -73,7 +73,7 @@ export default function PersPage() {
           <div className="max-w-4xl mx-auto px-6">
             <div className="text-center mb-14">
               <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Het verhaal</p>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Over OpStap</h2>
+              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Over OpStap</h2>
             </div>
             <p className="text-gray-400 leading-relaxed text-base sm:text-lg mb-12">
               OpStap koppelt je aan nieuwe mensen die ook vanavond de stad in willen.
@@ -98,7 +98,7 @@ export default function PersPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-14">
               <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Materialen</p>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Perskit downloaden</h2>
+              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Perskit downloaden</h2>
               <p className="text-gray-400 mt-3 leading-relaxed max-w-xl mx-auto">
                 De downloads worden binnenkort toegevoegd. Heb je nu al materiaal nodig?
                 Neem <a href="/contact" className="text-opstap-orange hover:underline">contact</a> met ons op.
@@ -140,7 +140,7 @@ export default function PersPage() {
         <section className="py-20 sm:py-24 bg-[#0A0A0A]">
           <div className="max-w-2xl mx-auto px-6 text-center">
             <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Persvragen</p>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-4">Neem contact op</h2>
+            <h2 className="text-3xl sm:text-4xl font-display tracking-tight mb-4">Neem contact op</h2>
             <p className="text-gray-400 leading-relaxed mb-8">
               Voor interviews, quotes of overige persvragen kun je het contactformulier
               gebruiken. We reageren binnen 2 werkdagen.

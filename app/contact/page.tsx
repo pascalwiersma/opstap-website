@@ -36,7 +36,7 @@ export default function ContactPage() {
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-opstap-orange/10 rounded-full blur-3xl pointer-events-none" />
           <div className="max-w-2xl mx-auto px-6 text-center relative">
             <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Contact</p>
-            <h1 className="text-4xl sm:text-5xl font-black tracking-tight mb-4">
+            <h1 className="text-4xl sm:text-5xl font-display tracking-tight mb-4">
               Vragen of ideeën?
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed">

@@ -41,7 +41,7 @@ export default function HoeHetWerkt() {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Zo werkt het</p>
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tight">
+          <h2 className="text-4xl sm:text-5xl font-display tracking-tight">
             Klaar in drie stappen
           </h2>
         </div>

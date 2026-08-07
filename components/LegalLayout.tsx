@@ -26,7 +26,7 @@ export default function LegalLayout({ titel, bijwerking, secties, lang = 'nl' }:
       <article className="max-w-3xl mx-auto px-6 pt-40 pb-16">
         {/* Header */}
         <div className="mb-12 pb-8 border-b border-white/10">
-          <h1 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">{titel}</h1>
+          <h1 className="text-3xl sm:text-4xl font-display tracking-tight mb-3">{titel}</h1>
           <p className="text-gray-500 text-sm">{labels.updated} {bijwerking}</p>
         </div>
 

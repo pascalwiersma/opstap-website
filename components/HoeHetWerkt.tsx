@@ -40,8 +40,8 @@ export default function HoeHetWerkt() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest mb-3">Zo werkt het</p>
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tight">
+          <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Zo werkt het</p>
+          <h2 className="text-4xl sm:text-5xl font-display tracking-tight">
             Klaar in drie stappen
           </h2>
         </div>
@@ -49,17 +49,17 @@ export default function HoeHetWerkt() {
         {/* Stappen */}
         <div className="grid sm:grid-cols-3 gap-8 relative">
           {/* Verbindingslijn (desktop) */}
-          <div className="hidden sm:block absolute top-8 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-px bg-gradient-to-r from-transparent via-[#E8611A]/30 to-transparent" />
+          <div className="hidden sm:block absolute top-8 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-px bg-gradient-to-r from-transparent via-opstap-orange/30 to-transparent" />
 
           {STAPPEN.map((stap, i) => (
             <div key={i} className="relative flex flex-col gap-5">
               {/* Nummer + icoon */}
               <div className="flex items-center gap-4">
                 <div className="relative shrink-0">
-                  <div className="w-14 h-14 rounded-2xl bg-[#E8611A]/10 border border-[#E8611A]/20 flex items-center justify-center text-[#E8611A]">
+                  <div className="w-14 h-14 rounded-2xl bg-opstap-orange/10 border border-opstap-orange/20 flex items-center justify-center text-opstap-orange">
                     {stap.icoon}
                   </div>
-                  <span className="absolute -top-2 -right-2 text-xs font-black text-[#E8611A] bg-[#0D0D0D] border border-[#E8611A]/30 rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 text-xs font-black text-opstap-orange bg-[#0D0D0D] border border-opstap-orange/30 rounded-full w-5 h-5 flex items-center justify-center">
                     {i + 1}
                   </span>
                 </div>

@@ -44,7 +44,7 @@ export default function AccountDeletionPage() {
           inhoud: (
             <p>
               Can&apos;t find the option in the app or do you have another question about deleting your account? Send an email to{' '}
-              <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">
+              <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">
                 opstap@pascal.services
               </a>
               . We will respond within two business days.

@@ -1,16 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
+import { Bowlby_One, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const bowlbyOne = Bowlby_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-bowlby-one",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-montserrat",
 });
 
 const TITEL = "OpStap — Niemand om mee op stap te gaan?";
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#E8611A",
+  themeColor: "#F1A74E",
 };
 
 export default function RootLayout({
@@ -68,7 +68,7 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0D0D0D] text-white`}
+        className={`${bowlbyOne.variable} ${montserrat.variable} font-sans antialiased bg-[#0D0D0D] text-white`}
       >
         <script
           type="application/ld+json"

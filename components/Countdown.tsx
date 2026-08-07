@@ -37,7 +37,7 @@ export default function Countdown() {
   if (!rest) return null
 
   return (
-    <div className="w-full bg-[#E8611A] flex items-center justify-center gap-3 py-2.5 text-white text-xs font-medium">
+    <div className="w-full bg-opstap-orange flex items-center justify-center gap-3 py-2.5 text-white text-xs font-medium">
       <span className="opacity-80">OpStap lanceert over</span>
       <div className="flex items-center gap-2">
         {rest.maanden > 0 && (

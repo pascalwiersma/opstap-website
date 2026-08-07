@@ -42,7 +42,7 @@ export default function Contactformulier() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-black">Bericht verstuurd!</h3>
+        <h3 className="text-2xl font-display">Bericht verstuurd!</h3>
         <p className="text-gray-400 max-w-sm leading-relaxed">
           Bedankt, {form.naam}. We reageren zo snel mogelijk via {form.email}.
         </p>
@@ -61,7 +61,7 @@ export default function Contactformulier() {
             value={form.naam}
             onChange={e => update('naam', e.target.value)}
             placeholder="Jouw naam"
-            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
+            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors"
           />
         </div>
         <div className="flex flex-col gap-1.5">
@@ -72,7 +72,7 @@ export default function Contactformulier() {
             value={form.email}
             onChange={e => update('email', e.target.value)}
             placeholder="naam@voorbeeld.nl"
-            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
+            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors"
           />
         </div>
       </div>
@@ -89,7 +89,7 @@ export default function Contactformulier() {
           value={form.bericht}
           onChange={e => update('bericht', e.target.value)}
           placeholder="Waar kunnen we je mee helpen?"
-          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors resize-none"
+          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors resize-none"
         />
       </div>
 
@@ -99,11 +99,11 @@ export default function Contactformulier() {
           required
           checked={form.akkoord}
           onChange={e => setForm(prev => ({ ...prev, akkoord: e.target.checked }))}
-          className="mt-0.5 w-4 h-4 rounded border-white/20 bg-[#141414] accent-[#E8611A]"
+          className="mt-0.5 w-4 h-4 rounded border-white/20 bg-[#141414] accent-opstap-orange"
         />
         <span>
           Ik ga akkoord met het{' '}
-          <Link href="/privacy" target="_blank" className="text-white underline hover:text-[#E8611A]">
+          <Link href="/privacy" target="_blank" className="text-white underline hover:text-opstap-orange">
             privacybeleid
           </Link>
         </span>
@@ -118,7 +118,7 @@ export default function Contactformulier() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="mt-2 bg-[#E8611A] hover:bg-[#d4561a] disabled:opacity-60 text-white font-bold py-4 rounded-2xl transition-colors shadow-xl shadow-[#E8611A]/20 text-sm"
+        className="mt-2 bg-opstap-orange hover:bg-opstap-orange-hover disabled:opacity-60 text-white font-bold py-4 rounded-2xl transition-colors shadow-xl shadow-opstap-orange/20 text-sm"
       >
         {status === 'loading' ? 'Versturen…' : 'Bericht versturen'}
       </button>

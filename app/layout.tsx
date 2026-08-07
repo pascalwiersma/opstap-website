@@ -14,7 +14,7 @@ const montserrat = Montserrat({
 });
 
 const TITEL = "OpStap — Niemand om mee op stap te gaan?";
-const OMSCHRIJVING = "OpStap koppelt je aan nieuwe mensen die ook vanavond de stad in willen. Check in, wij maken een groep op basis van jouw interesses. Elke avond om 20:00.";
+const OMSCHRIJVING = "OpStap koppelt je aan nieuwe mensen die ook vanavond de stad in willen. Check in, wij maken een groep op basis van jouw interesses. Elke donderdag, vrijdag en zaterdag om 20:00, in Groningen.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://opstap.app"),

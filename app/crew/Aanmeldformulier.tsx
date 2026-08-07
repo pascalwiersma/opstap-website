@@ -2,18 +2,22 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-
-const BESCHIKBARE_PROVINCIES = [
-  'Friesland', 'Drenthe', 'Overijssel', 'Flevoland', 'Gelderland',
-  'Utrecht', 'Noord-Holland', 'Zuid-Holland', 'Zeeland', 'Noord-Brabant', 'Limburg',
-]
+import { RekensomVeld, useRekensom } from '@/components/Rekensom'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
+
+const BESCHIKBAARHEID_OPTIES = [
+  '< 1 uur per week',
+  '1-3 uur per week',
+  '3-6 uur per week',
+  '6+ uur per week',
+]
 
 export default function Aanmeldformulier() {
   const [status, setStatus] = useState<Status>('idle')
   const [fout, setFout] = useState('')
-  const [form, setForm] = useState({ naam: '', email: '', provincie: '', motivatie: '', akkoord: false })
+  const [form, setForm] = useState({ naam: '', email: '', telefoon: '', beschikbaarheid: '', motivatie: '', akkoord: false, rekensomAntwoord: '' })
+  const rekensom = useRekensom()
 
   function update(key: keyof typeof form, value: string) {
     setForm(prev => ({ ...prev, [key]: value }))
@@ -27,7 +31,7 @@ export default function Aanmeldformulier() {
     const res = await fetch('/api/aanmelden', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
+      body: JSON.stringify({ ...form, rekensomA: rekensom.a, rekensomB: rekensom.b }),
     })
 
     if (res.ok) {
@@ -83,16 +87,28 @@ export default function Aanmeldformulier() {
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label className="text-sm font-medium text-gray-300">Provincie</label>
+        <label className="text-sm font-medium text-gray-300">Telefoonnummer</label>
+        <input
+          type="tel"
+          required
+          value={form.telefoon}
+          onChange={e => update('telefoon', e.target.value)}
+          placeholder="06 12345678"
+          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors"
+        />
+      </div>
+
+      <div className="flex flex-col gap-1.5">
+        <label className="text-sm font-medium text-gray-300">Beschikbaarheid</label>
         <select
           required
-          value={form.provincie}
-          onChange={e => update('provincie', e.target.value)}
+          value={form.beschikbaarheid}
+          onChange={e => update('beschikbaarheid', e.target.value)}
           className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-opstap-orange/50 transition-colors appearance-none"
         >
-          <option value="" disabled>Kies jouw provincie</option>
-          {BESCHIKBARE_PROVINCIES.map(p => (
-            <option key={p} value={p}>{p}</option>
+          <option value="" disabled>Hoeveel tijd kun je gemiddeld besteden?</option>
+          {BESCHIKBAARHEID_OPTIES.map(o => (
+            <option key={o} value={o}>{o}</option>
           ))}
         </select>
       </div>
@@ -108,10 +124,17 @@ export default function Aanmeldformulier() {
           rows={4}
           value={form.motivatie}
           onChange={e => update('motivatie', e.target.value)}
-          placeholder="Waarom wil jij vertegenwoordiger worden van OpStap in jouw provincie?"
+          placeholder="Waarom wil jij meehelpen OpStap in Groningen op te bouwen?"
           className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors resize-none"
         />
       </div>
+
+      <RekensomVeld
+        a={rekensom.a}
+        b={rekensom.b}
+        waarde={form.rekensomAntwoord}
+        onChange={v => update('rekensomAntwoord', v)}
+      />
 
       <label className="flex items-start gap-3 text-sm text-gray-400 cursor-pointer">
         <input

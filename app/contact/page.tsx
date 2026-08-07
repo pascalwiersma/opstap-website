@@ -10,20 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/contact' },
 }
 
-const INFO = [
-  {
-    titel: 'Algemeen',
-    email: 'opstap@pascal.services',
-  },
-  {
-    titel: 'Pers',
-    email: 'pers@opstap.app',
-  },
-  {
-    titel: 'Privacy',
-    email: 'privacy@opstap.app',
-  },
-]
+const CONTACT_EMAIL = 'opstap@pascal.services'
 
 export default function ContactPage() {
   return (
@@ -56,15 +43,13 @@ export default function ContactPage() {
         </div>
 
         <section className="pt-16 pb-24 sm:pt-20 sm:pb-32">
-          <div className="max-w-4xl mx-auto px-6 grid sm:grid-cols-3 gap-6">
-            {INFO.map(({ titel, email }) => (
-              <div key={titel} className="bg-[#141414] border border-white/5 rounded-2xl p-6 flex flex-col gap-2">
-                <h3 className="text-base font-bold">{titel}</h3>
-                <a href={`mailto:${email}`} className="text-gray-400 hover:text-opstap-orange text-sm transition-colors">
-                  {email}
-                </a>
-              </div>
-            ))}
+          <div className="max-w-2xl mx-auto px-6 text-center">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-gray-400 hover:text-opstap-orange text-lg font-medium transition-colors"
+            >
+              {CONTACT_EMAIL}
+            </a>
           </div>
         </section>
       </main>

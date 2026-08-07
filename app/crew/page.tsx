@@ -6,45 +6,30 @@ import Aanmeldformulier from './Aanmeldformulier'
 import { FiMapPin, FiEye, FiUsers } from 'react-icons/fi'
 
 export const metadata: Metadata = {
-  title: 'Word vertegenwoordiger — OpStap',
-  description: 'Als vertegenwoordiger van OpStap zorg jij ervoor dat de app lokaal klopt. Jij kent de stad, jij weet welke plekken erbij horen.',
-  alternates: { canonical: '/vertegenwoordiger' },
+  title: 'Word OpStap Crew — OpStap',
+  description: 'Help mee de app te vullen in Groningen: venues aanmelden, feedback geven en de eerste gebruikers vinden.',
+  alternates: { canonical: '/crew' },
 }
 
 const TAKEN = [
   {
     icoon: FiMapPin,
-    titel: 'Venues up-to-date houden',
-    tekst: 'Openingstijden, foto\'s en beschrijvingen van bars, clubs en cafés in jouw provincie actueel houden.',
+    titel: 'Venues aanmelden en up-to-date houden',
+    tekst: 'Openingstijden, foto\'s en beschrijvingen van bars, clubs en cafés in Groningen aanvullen en actueel houden.',
   },
   {
     icoon: FiEye,
-    titel: 'Lokaal vinger aan de pols',
+    titel: 'Vinger aan de pols in de stad',
     tekst: 'Kijken hoe de app gebruikt wordt, wat gebruikers fijn vinden en wat beter kan.',
   },
   {
     icoon: FiUsers,
-    titel: 'Aanspreekpunt voor jouw regio',
-    tekst: 'Jij vertegenwoordigt OpStap in jouw provincie.',
+    titel: 'Meehelpen de eerste community op te bouwen',
+    tekst: 'Jij helpt OpStap in Groningen van de grond te krijgen.',
   },
 ]
 
-const PROVINCIES: { naam: string; bezet: boolean }[] = [
-  { naam: 'Groningen', bezet: true },
-  { naam: 'Friesland', bezet: false },
-  { naam: 'Drenthe', bezet: false },
-  { naam: 'Overijssel', bezet: false },
-  { naam: 'Flevoland', bezet: false },
-  { naam: 'Gelderland', bezet: false },
-  { naam: 'Utrecht', bezet: false },
-  { naam: 'Noord-Holland', bezet: false },
-  { naam: 'Zuid-Holland', bezet: false },
-  { naam: 'Zeeland', bezet: false },
-  { naam: 'Noord-Brabant', bezet: false },
-  { naam: 'Limburg', bezet: false },
-]
-
-export default function VertegenwoordigerPage() {
+export default function CrewPage() {
   return (
     <div className="min-h-screen bg-[#0D0D0D] text-white">
       <Countdown />
@@ -58,15 +43,15 @@ export default function VertegenwoordigerPage() {
           <div className="max-w-4xl mx-auto px-6 text-center relative">
             <div className="inline-flex items-center gap-2 bg-opstap-orange/15 border border-opstap-orange/30 rounded-full px-4 py-1.5 mb-6">
               <span className="w-2 h-2 rounded-full bg-opstap-orange animate-pulse" />
-              <span className="text-opstap-orange text-sm font-semibold">11 provincies beschikbaar</span>
+              <span className="text-opstap-orange text-sm font-semibold">We starten in Groningen</span>
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display leading-[1.05] tracking-tight mb-6">
-              Word vertegenwoordiger<br className="hidden sm:block" />
-              <span className="text-opstap-orange"> in jouw provincie</span>
+              Word OpStap<br className="hidden sm:block" />
+              <span className="text-opstap-orange"> Crew</span>
             </h1>
             <p className="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
-              Als vertegenwoordiger van OpStap zorg jij ervoor dat de app lokaal klopt.
-              Jij kent de stad, jij weet welke plekken erbij horen.
+              Help mee de app te vullen in Groningen. Jij kent de stad, jij weet welke
+              plekken erbij horen.
             </p>
             <a
               href="#aanmelden"
@@ -82,7 +67,7 @@ export default function VertegenwoordigerPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-14">
               <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">De rol</p>
-              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Wat doe je als vertegenwoordiger?</h2>
+              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Wat doe je als Crew-lid?</h2>
             </div>
             <div className="grid sm:grid-cols-3 gap-6">
               {TAKEN.map(({ icoon: Icon, titel, tekst }) => (
@@ -113,7 +98,7 @@ export default function VertegenwoordigerPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'Vrijwilligerswerk',
-                    'Provincie Vertegenwoordiger badge op je profiel',
+                    'OpStap Crew-badge op je profiel',
                     'Vroege toegang tot nieuwe functies',
                   ].map(item => (
                     <li key={item} className="flex items-center gap-3 text-sm text-gray-300">
@@ -142,43 +127,8 @@ export default function VertegenwoordigerPage() {
           </div>
         </section>
 
-        {/* ── Provincies ── */}
-        <section className="py-20 sm:py-24">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-12">
-              <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Beschikbaarheid</p>
-              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Provincies</h2>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-              {PROVINCIES.map(({ naam, bezet }) => (
-                <div
-                  key={naam}
-                  className={`rounded-xl border p-4 flex items-center justify-between gap-2 ${
-                    bezet
-                      ? 'bg-opstap-orange/5 border-opstap-orange/20'
-                      : 'bg-[#141414] border-white/5'
-                  }`}
-                >
-                  <span className={`text-sm font-medium ${bezet ? 'text-gray-300' : 'text-white'}`}>
-                    {naam}
-                  </span>
-                  <span
-                    className={`text-xs font-semibold px-2 py-0.5 rounded-full shrink-0 ${
-                      bezet
-                        ? 'bg-opstap-orange/15 text-opstap-orange'
-                        : 'bg-green-400/10 text-green-400'
-                    }`}
-                  >
-                    {bezet ? 'Bezet' : 'Vrij'}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── Formulier ── */}
-        <section id="aanmelden" className="py-20 sm:py-24 bg-[#0A0A0A]">
+        <section id="aanmelden" className="py-20 sm:py-24">
           <div className="max-w-2xl mx-auto px-6">
             <div className="text-center mb-12">
               <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Aanmelden</p>

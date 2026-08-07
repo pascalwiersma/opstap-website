@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
-import Nav from '@/components/Nav'
 import Countdown from '@/components/Countdown'
 import Footer from '@/components/Footer'
-import Samenwerkformulier from './Samenwerkformulier'
+import Nav from '@/components/Nav'
+import type { Metadata } from 'next'
 import { FiCoffee, FiHome, FiThumbsUp } from 'react-icons/fi'
+import Samenwerkformulier from './Samenwerkformulier'
 
 export const metadata: Metadata = {
-  title: 'Samenwerken met OpStap — Bedrijven & organisaties',
+  title: 'Samenwerken — OpStap',
   description: 'Ben je een café, club of (semi-)overheidsorganisatie en zie je kansen om samen te werken met OpStap? Laat het alvast weten.',
   alternates: { canonical: '/bedrijven' },
 }
@@ -41,7 +41,6 @@ export default function BedrijvenPage() {
         <section className="relative overflow-hidden py-20 sm:py-28">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-opstap-orange/10 rounded-full blur-3xl pointer-events-none" />
           <div className="max-w-3xl mx-auto px-6 text-center relative">
-            <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Bedrijven & organisaties</p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display leading-[1.05] tracking-tight mb-6">
               Samenwerken<br className="hidden sm:block" />
               <span className="text-opstap-orange"> met OpStap</span>

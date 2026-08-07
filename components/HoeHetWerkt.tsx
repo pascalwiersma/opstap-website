@@ -1,9 +1,9 @@
 const STAPPEN = [
   {
     nummer: "01",
-    titel: "Check in voor vanavond",
+    titel: "Check in op do, vr of za",
     beschrijving:
-      "Open de app en tik op de check-in knop. Je geeft aan dat je vanavond de stad in wil. Dat is alles.",
+      "Open de app op donderdag, vrijdag of zaterdag en tik op de check-in knop. Je geeft aan dat je die avond de stad in wil. Dat is alles.",
     icoon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -14,7 +14,7 @@ const STAPPEN = [
     nummer: "02",
     titel: "Om 20:00 krijg je een match",
     beschrijving:
-      "Ons algoritme koppelt je aan mensen met dezelfde interesses en favoriete plekken in jouw stad. Je krijgt direct een pushmelding.",
+      "Ons algoritme koppelt je aan mensen met dezelfde interesses en favoriete plekken in Groningen. Je krijgt direct een pushmelding.",
     icoon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />

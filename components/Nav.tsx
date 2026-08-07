@@ -6,11 +6,11 @@ import SocialIcons from './SocialIcons'
 
 const LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'Provincie Vertegenwoordiger', href: '/vertegenwoordiger' },
+  { label: 'Samenwerken', href: '/bedrijven' },
+  { label: 'Contact', href: '/contact' },
 ]
 
-const CONTACT_LINK = { label: 'Contact', href: '/contact' }
-const BEDRIJVEN_LINK = { label: 'Bedrijven & organisaties', href: '/bedrijven' }
+const CREW_LINK = { label: 'Meehelpen', href: '/crew' }
 
 export default function Nav() {
   const [voorbijCountdown, setVoorbijCountdown] = useState(false)
@@ -38,7 +38,7 @@ export default function Nav() {
       >
         <nav className="pointer-events-auto max-w-4xl mx-auto h-14 flex items-center justify-between px-5 rounded-2xl bg-[#1E1E1E]/95 backdrop-blur-xl shadow-2xl shadow-black/50">
 
-          {/* Links (desktop) */}
+          {/* Links: paginalinks (desktop) */}
           <div className="hidden sm:flex items-center gap-4 sm:gap-6 flex-1">
             {LINKS.map(item => (
               <a
@@ -64,7 +64,7 @@ export default function Nav() {
             </button>
           </div>
 
-          {/* Midden: logo alleen */}
+          {/* Midden: logo */}
           <div className="absolute left-1/2 -translate-x-1/2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -74,19 +74,13 @@ export default function Nav() {
             />
           </div>
 
-          {/* Rechts */}
-          <div className="flex items-center gap-4 sm:gap-5 flex-1 justify-end">
+          {/* Rechts: CTA + social (desktop) */}
+          <div className="hidden sm:flex items-center gap-4 sm:gap-5 flex-1 justify-end">
             <a
-              href={BEDRIJVEN_LINK.href}
-              className="hidden sm:block text-sm text-gray-400 hover:text-white transition-colors font-medium whitespace-nowrap"
+              href={CREW_LINK.href}
+              className="text-sm font-semibold text-opstap-orange bg-opstap-orange/10 hover:bg-opstap-orange hover:text-white border border-opstap-orange/30 transition-colors whitespace-nowrap px-3 py-1.5 rounded-full"
             >
-              {BEDRIJVEN_LINK.label}
-            </a>
-            <a
-              href={CONTACT_LINK.href}
-              className="hidden sm:block text-sm text-gray-400 hover:text-white transition-colors font-medium whitespace-nowrap"
-            >
-              {CONTACT_LINK.label}
+              {CREW_LINK.label}
             </a>
             <SocialIcons size="sm" />
           </div>
@@ -116,12 +110,14 @@ export default function Nav() {
           </div>
 
           <div className="flex flex-col px-6 pt-6 gap-1">
-            {[...LINKS, BEDRIJVEN_LINK, CONTACT_LINK].map(item => (
+            {[...LINKS, CREW_LINK].map(item => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-white text-lg font-semibold py-4 border-b border-white/10"
+                className={`text-lg font-semibold py-4 border-b border-white/10 ${
+                  item.href === CREW_LINK.href ? 'text-opstap-orange' : 'text-white'
+                }`}
               >
                 {item.label}
               </a>

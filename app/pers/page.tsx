@@ -1,8 +1,8 @@
-import type { Metadata } from 'next'
-import Nav from '@/components/Nav'
 import Countdown from '@/components/Countdown'
 import Footer from '@/components/Footer'
-import { FiDownload, FiImage, FiBookOpen, FiCamera, FiPackage, FiClock } from 'react-icons/fi'
+import Nav from '@/components/Nav'
+import type { Metadata } from 'next'
+import { FiBookOpen, FiCamera, FiClock, FiDownload, FiImage, FiPackage } from 'react-icons/fi'
 
 export const metadata: Metadata = {
   title: 'Pers — OpStap',
@@ -10,14 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/pers' },
 }
 
-const FEITEN = [
-  { label: 'Lancering', waarde: '1 september 2026' },
-  { label: 'Locatie', waarde: 'Groningen, Nederland' },
-  { label: 'Bouwer', waarde: 'Pascal Services' },
-  { label: 'Categorie', waarde: 'Social / Lifestyle' },
-]
-
-const DOWNLOADS = [
+const DOWNLOADS: { icoon: typeof FiImage; titel: string; tekst: string; href?: string }[] = [
   {
     icoon: FiImage,
     titel: 'Logo\'s & iconen',
@@ -27,6 +20,7 @@ const DOWNLOADS = [
     icoon: FiBookOpen,
     titel: 'Merkgids',
     tekst: 'Kleuren, typografie en gebruiksregels voor het OpStap-merk.',
+    href: '/merkgids',
   },
   {
     icoon: FiCamera,
@@ -78,18 +72,10 @@ export default function PersPage() {
             <p className="text-gray-400 leading-relaxed text-base sm:text-lg mb-12">
               OpStap koppelt je aan nieuwe mensen die ook vanavond de stad in willen.
               Check in, en OpStap maakt op basis van jouw interesses een groep waarmee
-              je die avond op stap gaat. Elke avond om 20:00 uur ontstaan er nieuwe
-              groepen, zodat niemand een avond hoeft over te slaan omdat er &apos;toch
-              niemand mee kan&apos;.
+              je die avond op stap gaat. Elke donderdag, vrijdag en zaterdag om 20:00 uur
+              ontstaan er nieuwe groepen in Groningen, zodat niemand zo&apos;n avond hoeft
+              over te slaan omdat er &apos;toch niemand mee kan&apos;.
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {FEITEN.map(({ label, waarde }) => (
-                <div key={label} className="bg-[#141414] border border-white/5 rounded-2xl p-5">
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">{label}</p>
-                  <p className="text-white font-bold">{waarde}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -105,31 +91,42 @@ export default function PersPage() {
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
-              {DOWNLOADS.map(({ icoon: Icon, titel, tekst }) => (
+              {DOWNLOADS.map(({ icoon: Icon, titel, tekst, href }) => (
                 <div key={titel} className="bg-[#141414] border border-white/5 rounded-2xl p-6 flex flex-col gap-4">
                   <div className="flex items-start justify-between gap-3">
                     <div className="w-11 h-11 rounded-xl bg-opstap-orange/10 border border-opstap-orange/20 flex items-center justify-center text-opstap-orange">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-500 bg-white/5 px-2.5 py-1 rounded-full shrink-0">
-                      <FiClock className="w-3 h-3" />
-                      Binnenkort
-                    </span>
+                    {!href && (
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-500 bg-white/5 px-2.5 py-1 rounded-full shrink-0">
+                        <FiClock className="w-3 h-3" />
+                        Binnenkort
+                      </span>
+                    )}
                   </div>
                   <div>
                     <h3 className="text-lg font-bold mb-1">{titel}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed">{tekst}</p>
                   </div>
-                  <button
-                    type="button"
-                    disabled
-                    aria-disabled="true"
-                    title="Binnenkort beschikbaar"
-                    className="mt-auto inline-flex items-center justify-center gap-2 bg-white/5 text-gray-500 font-semibold px-5 py-3 rounded-xl text-sm cursor-not-allowed"
-                  >
-                    <FiDownload className="w-4 h-4" />
-                    Downloaden
-                  </button>
+                  {href ? (
+                    <a
+                      href={href}
+                      className="mt-auto inline-flex items-center justify-center gap-2 bg-opstap-orange hover:bg-opstap-orange-hover text-white font-semibold px-5 py-3 rounded-xl text-sm transition-colors"
+                    >
+                      Bekijken
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled
+                      aria-disabled="true"
+                      title="Binnenkort beschikbaar"
+                      className="mt-auto inline-flex items-center justify-center gap-2 bg-white/5 text-gray-500 font-semibold px-5 py-3 rounded-xl text-sm cursor-not-allowed"
+                    >
+                      <FiDownload className="w-4 h-4" />
+                      Downloaden
+                    </button>
+                  )}
                 </div>
               ))}
             </div>

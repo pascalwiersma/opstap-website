@@ -7,10 +7,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: `${BASE_URL}/`, lastModified: nu, changeFrequency: 'weekly', priority: 1 },
-    { url: `${BASE_URL}/vertegenwoordiger`, lastModified: nu, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/crew`, lastModified: nu, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/bedrijven`, lastModified: nu, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/contact`, lastModified: nu, changeFrequency: 'yearly', priority: 0.6 },
     { url: `${BASE_URL}/pers`, lastModified: nu, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE_URL}/merkgids`, lastModified: nu, changeFrequency: 'monthly', priority: 0.4 },
     { url: `${BASE_URL}/privacy`, lastModified: nu, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE_URL}/voorwaarden`, lastModified: nu, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE_URL}/richtlijnen`, lastModified: nu, changeFrequency: 'yearly', priority: 0.3 },

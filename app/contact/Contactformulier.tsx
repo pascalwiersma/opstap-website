@@ -2,13 +2,15 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { RekensomVeld, useRekensom } from '@/components/Rekensom'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
 export default function Contactformulier() {
   const [status, setStatus] = useState<Status>('idle')
   const [fout, setFout] = useState('')
-  const [form, setForm] = useState({ naam: '', email: '', bericht: '', akkoord: false })
+  const [form, setForm] = useState({ naam: '', email: '', bericht: '', akkoord: false, rekensomAntwoord: '' })
+  const rekensom = useRekensom()
 
   function update(key: keyof typeof form, value: string) {
     setForm(prev => ({ ...prev, [key]: value }))
@@ -22,7 +24,7 @@ export default function Contactformulier() {
     const res = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
+      body: JSON.stringify({ ...form, rekensomA: rekensom.a, rekensomB: rekensom.b }),
     })
 
     if (res.ok) {
@@ -92,6 +94,13 @@ export default function Contactformulier() {
           className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors resize-none"
         />
       </div>
+
+      <RekensomVeld
+        a={rekensom.a}
+        b={rekensom.b}
+        waarde={form.rekensomAntwoord}
+        onChange={v => update('rekensomAntwoord', v)}
+      />
 
       <label className="flex items-start gap-3 text-sm text-gray-400 cursor-pointer">
         <input

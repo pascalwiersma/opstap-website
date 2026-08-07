@@ -26,7 +26,7 @@ export default function Hero() {
 
             <p className="text-gray-400 text-lg leading-relaxed max-w-md">
               Check in, wij maken een groep op basis van jouw interesses.{" "}
-              <span className="text-white font-medium">Elke avond om 20:00.</span>
+              <span className="text-white font-medium">Donderdag, vrijdag en zaterdag om 20:00, in Groningen.</span>
             </p>
 
             <div id="download" className="flex flex-col sm:flex-row gap-3 pt-2">

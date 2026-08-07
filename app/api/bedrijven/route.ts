@@ -1,11 +1,16 @@
 import { escapeHtml, verstuurMail } from '@/lib/mail'
+import { rekensomKlopt } from '@/lib/rekensom'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
-  const { naam, organisatie, type, email, telefoon, bericht } = await req.json()
+  const { naam, organisatie, type, email, telefoon, bericht, rekensomA, rekensomB, rekensomAntwoord } = await req.json()
 
   if (!naam || !organisatie || !type || !email || !bericht) {
     return NextResponse.json({ error: 'Vul alle verplichte velden in.' }, { status: 400 })
+  }
+
+  if (!rekensomKlopt(rekensomA, rekensomB, rekensomAntwoord)) {
+    return NextResponse.json({ error: 'De rekensom klopt niet.' }, { status: 400 })
   }
 
   const result = await verstuurMail({

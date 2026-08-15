@@ -15,7 +15,7 @@ export default function TermsPage() {
     <LegalLayout
       lang="en"
       titel="Terms of Service"
-      bijwerking="12 June 2026"
+      bijwerking="3 August 2026"
       secties={[
         {
           titel: 'Introduction',

@@ -14,7 +14,7 @@ export default function VoorwaardenPage() {
   return (
     <LegalLayout
       titel="Gebruiksvoorwaarden"
-      bijwerking="12 juni 2026"
+      bijwerking="3 augustus 2026"
       secties={[
         {
           titel: 'Inleiding',

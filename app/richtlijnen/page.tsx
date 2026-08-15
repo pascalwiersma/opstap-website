@@ -11,7 +11,7 @@ export default function RichtlijnenPage() {
   return (
     <LegalLayout
       titel="Community Richtlijnen"
-      bijwerking="7 juni 2026"
+      bijwerking="3 augustus 2026"
       secties={[
         {
           titel: 'Inleiding',

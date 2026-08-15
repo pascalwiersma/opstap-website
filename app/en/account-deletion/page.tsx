@@ -15,7 +15,7 @@ export default function AccountDeletionPage() {
     <LegalLayout
       lang="en"
       titel="Delete your account"
-      bijwerking="12 June 2026"
+      bijwerking="3 August 2026"
       secties={[
         {
           titel: 'How do you delete your account?',

@@ -14,7 +14,7 @@ export default function AccountVerwijderenPage() {
   return (
     <LegalLayout
       titel="Account verwijderen"
-      bijwerking="12 juni 2026"
+      bijwerking="3 augustus 2026"
       secties={[
         {
           titel: 'Hoe verwijder je je account?',

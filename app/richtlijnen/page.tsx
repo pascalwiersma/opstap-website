@@ -11,7 +11,7 @@ export default function RichtlijnenPage() {
   return (
     <LegalLayout
       titel="Community Richtlijnen"
-      bijwerking="3 augustus 2026"
+      bijwerking="16 augustus 2026"
       secties={[
         {
           titel: 'Inleiding',
@@ -49,7 +49,7 @@ export default function RichtlijnenPage() {
                 <li>Je kunt elke gebruiker rapporteren of blokkeren via het profiel of de groepschat.</li>
                 <li>Alle rapporten worden door het OpStap-team beoordeeld en opgevolgd.</li>
               </ul>
-              <p className="mt-2">Voel je je onveilig? Gebruik de rapporteerknop in de app of neem contact op via <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">opstap@pascal.services</a>.</p>
+              <p className="mt-2">Voel je je onveilig of in gevaar? Bel dan altijd eerst de politie. Bij een noodsituatie: <a href="tel:112" className="text-opstap-orange hover:underline">112</a>. Geen spoed, wel politie nodig: <a href="tel:08008844" className="text-opstap-orange hover:underline">0800 8844</a>. OpStap is geen hulpdienst. Daarna kun je het in de app rapporteren of ons mailen via <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">opstap@pascal.services</a>.</p>
             </>
           ),
         },
@@ -104,7 +104,7 @@ export default function RichtlijnenPage() {
                 <li>De rapporteerknop in de groepschat</li>
                 <li>E-mail: <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">opstap@pascal.services</a></li>
               </ul>
-              <p className="mt-2">Alle rapporten zijn vertrouwelijk. Je identiteit wordt niet gedeeld met de gemelde gebruiker.</p>
+              <p className="mt-2">Alle rapporten zijn vertrouwelijk. Je identiteit wordt niet gedeeld met de gemelde gebruiker. Een rapport aan OpStap vervangt geen melding bij de politie — bij gevaar bel je <a href="tel:112" className="text-opstap-orange hover:underline">112</a> of <a href="tel:08008844" className="text-opstap-orange hover:underline">0800 8844</a>.</p>
             </>
           ),
         },

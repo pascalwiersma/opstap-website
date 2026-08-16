@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       titel="Privacybeleid"
-      bijwerking="7 juni 2026"
+      bijwerking="3 augustus 2026"
       secties={[
         {
           titel: 'Inleiding',

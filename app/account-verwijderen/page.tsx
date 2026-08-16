@@ -43,7 +43,7 @@ export default function AccountVerwijderenPage() {
           inhoud: (
             <p>
               Lukt het niet via de app of heb je een andere vraag over het verwijderen van je account? Stuur dan een e-mail naar{' '}
-              <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">
+              <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">
                 opstap@pascal.services
               </a>
               . We reageren binnen twee werkdagen.

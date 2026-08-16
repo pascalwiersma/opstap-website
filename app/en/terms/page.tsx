@@ -102,8 +102,8 @@ export default function TermsPage() {
             <>
               <p><strong className="text-white">Pascal Services</strong></p>
               <p>Hoornsediep 34, 9725 HK Groningen, the Netherlands</p>
-              <p>Tel: <a href="tel:0853016480" className="text-[#E8611A] hover:underline">085 301 6480</a></p>
-              <p>Email: <a href="mailto:opstap@pascal.services" className="text-[#E8611A] hover:underline">opstap@pascal.services</a></p>
+              <p>Tel: <a href="tel:0853016480" className="text-opstap-orange hover:underline">085 301 6480</a></p>
+              <p>Email: <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">opstap@pascal.services</a></p>
               <p className="mt-2 text-gray-500">CoC: 92166474 · VAT: NL004941205B42</p>
             </>
           ),

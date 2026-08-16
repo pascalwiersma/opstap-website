@@ -6,7 +6,7 @@ const LINKS = [
     kop: 'Product',
     items: [
       { label: 'Hoe het werkt', href: '/#hoe-het-werkt' },
-      { label: 'Bedrijven & organisaties', href: '/bedrijven' },
+      { label: 'Samenwerken', href: '/bedrijven' },
     ],
   },
   {
@@ -21,6 +21,7 @@ const LINKS = [
     kop: 'Contact',
     items: [
       { label: 'Pers', href: '/pers' },
+      { label: 'Merkgids', href: '/merkgids' },
       { label: 'Contactformulier', href: '/contact' },
     ],
   },
@@ -36,7 +37,6 @@ export default function Footer() {
           <div className="col-span-2 sm:col-span-1 flex flex-col gap-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/logo-transparant.png" alt="OpStap" className="w-20 h-20 object-contain" />
-            <p className="text-gray-600 text-xs">Een product van Pascal Services</p>
           </div>
 
           {/* Navigatie secties */}
@@ -62,7 +62,7 @@ export default function Footer() {
         {/* Onderkant */}
         <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-600 text-xs">
-            © {new Date().getFullYear()} Pascal Services. Alle rechten voorbehouden.
+            © {new Date().getFullYear()} OpStap. Alle rechten voorbehouden.
           </p>
           <SocialIcons />
         </div>

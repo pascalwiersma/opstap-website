@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { RekensomVeld, useRekensom } from '@/components/Rekensom'
 
 const TYPES = ['Horeca / club / café', 'Gemeente / (semi-)overheid', 'Anders'] as const
 
@@ -18,7 +19,9 @@ export default function Samenwerkformulier() {
     telefoon: '',
     bericht: '',
     akkoord: false,
+    rekensomAntwoord: '',
   })
+  const rekensom = useRekensom()
 
   function update(key: keyof typeof form, value: string) {
     setForm(prev => ({ ...prev, [key]: value }))
@@ -32,7 +35,7 @@ export default function Samenwerkformulier() {
     const res = await fetch('/api/bedrijven', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
+      body: JSON.stringify({ ...form, rekensomA: rekensom.a, rekensomB: rekensom.b }),
     })
 
     if (res.ok) {
@@ -52,7 +55,7 @@ export default function Samenwerkformulier() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-black">Aanmelding ontvangen!</h3>
+        <h3 className="text-2xl font-display">Aanmelding ontvangen!</h3>
         <p className="text-gray-400 max-w-sm leading-relaxed">
           Bedankt, {form.naam}. Zodra we samenwerkingen opzetten nemen we contact op via {form.email}.
         </p>
@@ -71,7 +74,7 @@ export default function Samenwerkformulier() {
             value={form.naam}
             onChange={e => update('naam', e.target.value)}
             placeholder="Jouw naam"
-            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
+            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors"
           />
         </div>
         <div className="flex flex-col gap-1.5">
@@ -82,7 +85,7 @@ export default function Samenwerkformulier() {
             value={form.organisatie}
             onChange={e => update('organisatie', e.target.value)}
             placeholder="Naam van je bedrijf of organisatie"
-            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
+            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors"
           />
         </div>
       </div>
@@ -93,7 +96,7 @@ export default function Samenwerkformulier() {
           required
           value={form.type}
           onChange={e => update('type', e.target.value)}
-          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#E8611A]/50 transition-colors appearance-none"
+          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-opstap-orange/50 transition-colors appearance-none"
         >
           <option value="" disabled>Kies een type</option>
           {TYPES.map(t => (
@@ -111,7 +114,7 @@ export default function Samenwerkformulier() {
             value={form.email}
             onChange={e => update('email', e.target.value)}
             placeholder="naam@voorbeeld.nl"
-            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
+            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors"
           />
         </div>
         <div className="flex flex-col gap-1.5">
@@ -121,7 +124,7 @@ export default function Samenwerkformulier() {
             value={form.telefoon}
             onChange={e => update('telefoon', e.target.value)}
             placeholder="06 12345678"
-            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
+            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors"
           />
         </div>
       </div>
@@ -138,9 +141,16 @@ export default function Samenwerkformulier() {
           value={form.bericht}
           onChange={e => update('bericht', e.target.value)}
           placeholder="Vertel kort waar je aan denkt en hoe we kunnen samenwerken."
-          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors resize-none"
+          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors resize-none"
         />
       </div>
+
+      <RekensomVeld
+        a={rekensom.a}
+        b={rekensom.b}
+        waarde={form.rekensomAntwoord}
+        onChange={v => update('rekensomAntwoord', v)}
+      />
 
       <label className="flex items-start gap-3 text-sm text-gray-400 cursor-pointer">
         <input
@@ -148,11 +158,11 @@ export default function Samenwerkformulier() {
           required
           checked={form.akkoord}
           onChange={e => setForm(prev => ({ ...prev, akkoord: e.target.checked }))}
-          className="mt-0.5 w-4 h-4 rounded border-white/20 bg-[#141414] accent-[#E8611A]"
+          className="mt-0.5 w-4 h-4 rounded border-white/20 bg-[#141414] accent-opstap-orange"
         />
         <span>
           Ik ga akkoord met het{' '}
-          <Link href="/privacy" target="_blank" className="text-white underline hover:text-[#E8611A]">
+          <Link href="/privacy" target="_blank" className="text-white underline hover:text-opstap-orange">
             privacybeleid
           </Link>
         </span>
@@ -167,7 +177,7 @@ export default function Samenwerkformulier() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="mt-2 bg-[#E8611A] hover:bg-[#d4561a] disabled:opacity-60 text-white font-bold py-4 rounded-2xl transition-colors shadow-xl shadow-[#E8611A]/20 text-sm"
+        className="mt-2 bg-opstap-orange hover:bg-opstap-orange-hover disabled:opacity-60 text-white font-bold py-4 rounded-2xl transition-colors shadow-xl shadow-opstap-orange/20 text-sm"
       >
         {status === 'loading' ? 'Versturen…' : 'Interesse doorgeven'}
       </button>

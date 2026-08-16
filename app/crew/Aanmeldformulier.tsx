@@ -2,18 +2,22 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-
-const BESCHIKBARE_PROVINCIES = [
-  'Friesland', 'Drenthe', 'Overijssel', 'Flevoland', 'Gelderland',
-  'Utrecht', 'Noord-Holland', 'Zuid-Holland', 'Zeeland', 'Noord-Brabant', 'Limburg',
-]
+import { RekensomVeld, useRekensom } from '@/components/Rekensom'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
+
+const BESCHIKBAARHEID_OPTIES = [
+  '< 1 uur per week',
+  '1-3 uur per week',
+  '3-6 uur per week',
+  '6+ uur per week',
+]
 
 export default function Aanmeldformulier() {
   const [status, setStatus] = useState<Status>('idle')
   const [fout, setFout] = useState('')
-  const [form, setForm] = useState({ naam: '', email: '', provincie: '', motivatie: '', akkoord: false })
+  const [form, setForm] = useState({ naam: '', email: '', telefoon: '', beschikbaarheid: '', motivatie: '', akkoord: false, rekensomAntwoord: '' })
+  const rekensom = useRekensom()
 
   function update(key: keyof typeof form, value: string) {
     setForm(prev => ({ ...prev, [key]: value }))
@@ -27,7 +31,7 @@ export default function Aanmeldformulier() {
     const res = await fetch('/api/aanmelden', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
+      body: JSON.stringify({ ...form, rekensomA: rekensom.a, rekensomB: rekensom.b }),
     })
 
     if (res.ok) {
@@ -47,7 +51,7 @@ export default function Aanmeldformulier() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-black">Aanmelding ontvangen!</h3>
+        <h3 className="text-2xl font-display">Aanmelding ontvangen!</h3>
         <p className="text-gray-400 max-w-sm leading-relaxed">
           Bedankt, {form.naam}. We nemen zo snel mogelijk contact met je op via {form.email}.
         </p>
@@ -66,7 +70,7 @@ export default function Aanmeldformulier() {
             value={form.naam}
             onChange={e => update('naam', e.target.value)}
             placeholder="Jouw naam"
-            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
+            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors"
           />
         </div>
         <div className="flex flex-col gap-1.5">
@@ -77,22 +81,34 @@ export default function Aanmeldformulier() {
             value={form.email}
             onChange={e => update('email', e.target.value)}
             placeholder="naam@voorbeeld.nl"
-            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors"
+            className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors"
           />
         </div>
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label className="text-sm font-medium text-gray-300">Provincie</label>
+        <label className="text-sm font-medium text-gray-300">Telefoonnummer</label>
+        <input
+          type="tel"
+          required
+          value={form.telefoon}
+          onChange={e => update('telefoon', e.target.value)}
+          placeholder="06 12345678"
+          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors"
+        />
+      </div>
+
+      <div className="flex flex-col gap-1.5">
+        <label className="text-sm font-medium text-gray-300">Beschikbaarheid</label>
         <select
           required
-          value={form.provincie}
-          onChange={e => update('provincie', e.target.value)}
-          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#E8611A]/50 transition-colors appearance-none"
+          value={form.beschikbaarheid}
+          onChange={e => update('beschikbaarheid', e.target.value)}
+          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-opstap-orange/50 transition-colors appearance-none"
         >
-          <option value="" disabled>Kies jouw provincie</option>
-          {BESCHIKBARE_PROVINCIES.map(p => (
-            <option key={p} value={p}>{p}</option>
+          <option value="" disabled>Hoeveel tijd kun je gemiddeld besteden?</option>
+          {BESCHIKBAARHEID_OPTIES.map(o => (
+            <option key={o} value={o}>{o}</option>
           ))}
         </select>
       </div>
@@ -108,10 +124,17 @@ export default function Aanmeldformulier() {
           rows={4}
           value={form.motivatie}
           onChange={e => update('motivatie', e.target.value)}
-          placeholder="Waarom wil jij vertegenwoordiger worden van OpStap in jouw provincie?"
-          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E8611A]/50 transition-colors resize-none"
+          placeholder="Waarom wil jij meehelpen OpStap in Groningen op te bouwen?"
+          className="bg-[#141414] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-opstap-orange/50 transition-colors resize-none"
         />
       </div>
+
+      <RekensomVeld
+        a={rekensom.a}
+        b={rekensom.b}
+        waarde={form.rekensomAntwoord}
+        onChange={v => update('rekensomAntwoord', v)}
+      />
 
       <label className="flex items-start gap-3 text-sm text-gray-400 cursor-pointer">
         <input
@@ -119,11 +142,11 @@ export default function Aanmeldformulier() {
           required
           checked={form.akkoord}
           onChange={e => setForm(prev => ({ ...prev, akkoord: e.target.checked }))}
-          className="mt-0.5 w-4 h-4 rounded border-white/20 bg-[#141414] accent-[#E8611A]"
+          className="mt-0.5 w-4 h-4 rounded border-white/20 bg-[#141414] accent-opstap-orange"
         />
         <span>
           Ik ga akkoord met het{' '}
-          <Link href="/privacy" target="_blank" className="text-white underline hover:text-[#E8611A]">
+          <Link href="/privacy" target="_blank" className="text-white underline hover:text-opstap-orange">
             privacybeleid
           </Link>
         </span>
@@ -138,7 +161,7 @@ export default function Aanmeldformulier() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="mt-2 bg-[#E8611A] hover:bg-[#d4561a] disabled:opacity-60 text-white font-bold py-4 rounded-2xl transition-colors shadow-xl shadow-[#E8611A]/20 text-sm"
+        className="mt-2 bg-opstap-orange hover:bg-opstap-orange-hover disabled:opacity-60 text-white font-bold py-4 rounded-2xl transition-colors shadow-xl shadow-opstap-orange/20 text-sm"
       >
         {status === 'loading' ? 'Versturen…' : 'Aanmelding versturen'}
       </button>

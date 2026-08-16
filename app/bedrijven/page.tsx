@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
-import Nav from '@/components/Nav'
 import Countdown from '@/components/Countdown'
 import Footer from '@/components/Footer'
-import Samenwerkformulier from './Samenwerkformulier'
+import Nav from '@/components/Nav'
+import type { Metadata } from 'next'
 import { FiCoffee, FiHome, FiThumbsUp } from 'react-icons/fi'
+import Samenwerkformulier from './Samenwerkformulier'
 
 export const metadata: Metadata = {
-  title: 'Samenwerken met OpStap — Bedrijven & organisaties',
+  title: 'Samenwerken — OpStap',
   description: 'Ben je een café, club of (semi-)overheidsorganisatie en zie je kansen om samen te werken met OpStap? Laat het alvast weten.',
   alternates: { canonical: '/bedrijven' },
 }
@@ -39,12 +39,11 @@ export default function BedrijvenPage() {
 
         {/* ── Hero ── */}
         <section className="relative overflow-hidden py-20 sm:py-28">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#E8611A]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-opstap-orange/10 rounded-full blur-3xl pointer-events-none" />
           <div className="max-w-3xl mx-auto px-6 text-center relative">
-            <p className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest mb-3">Bedrijven & organisaties</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display leading-[1.05] tracking-tight mb-6">
               Samenwerken<br className="hidden sm:block" />
-              <span className="text-[#E8611A]"> met OpStap</span>
+              <span className="text-opstap-orange"> met OpStap</span>
             </h1>
             <p className="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
               OpStap staat nog aan het begin. Ben je een café, club of (semi-)overheidsorganisatie
@@ -58,13 +57,13 @@ export default function BedrijvenPage() {
         <section className="py-20 sm:py-24 bg-[#0A0A0A]">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-14">
-              <p className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest mb-3">Voor wie</p>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Wie we graag spreken</h2>
+              <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Voor wie</p>
+              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Wie we graag spreken</h2>
             </div>
             <div className="grid sm:grid-cols-3 gap-6">
               {DOELGROEPEN.map(({ icoon: Icon, titel, tekst }) => (
                 <div key={titel} className="bg-[#141414] border border-white/5 rounded-2xl p-6 flex flex-col gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-[#E8611A]/10 border border-[#E8611A]/20 flex items-center justify-center text-[#E8611A]">
+                  <div className="w-11 h-11 rounded-xl bg-opstap-orange/10 border border-opstap-orange/20 flex items-center justify-center text-opstap-orange">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h3 className="text-lg font-bold">{titel}</h3>
@@ -79,8 +78,8 @@ export default function BedrijvenPage() {
         <section className="py-20 sm:py-24">
           <div className="max-w-2xl mx-auto px-6">
             <div className="text-center mb-12">
-              <p className="text-[#E8611A] font-semibold text-sm uppercase tracking-widest mb-3">Interesse doorgeven</p>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Laat het ons weten</h2>
+              <p className="text-opstap-orange font-semibold text-sm uppercase tracking-widest mb-3">Interesse doorgeven</p>
+              <h2 className="text-3xl sm:text-4xl font-display tracking-tight">Laat het ons weten</h2>
               <p className="text-gray-400 mt-3 leading-relaxed">
                 Vul het formulier in, dan nemen we contact op zodra we samenwerkingen opzetten.
               </p>

@@ -72,7 +72,7 @@ export default function PersPage() {
             <p className="text-gray-400 leading-relaxed text-base sm:text-lg mb-12">
               OpStap koppelt je aan nieuwe mensen die ook vanavond de stad in willen.
               Check in, en OpStap maakt op basis van jouw interesses een groep waarmee
-              je die avond op stap gaat. Elke donderdag, vrijdag en zaterdag om 20:00 uur
+              je die avond op stap gaat. Elke donderdag om 20:00 uur
               ontstaan er nieuwe groepen in Groningen, zodat niemand zo&apos;n avond hoeft
               over te slaan omdat er &apos;toch niemand mee kan&apos;.
             </p>

@@ -3,7 +3,7 @@ const STAPPEN = [
     nummer: "01",
     titel: "Check in op do, vr of za",
     beschrijving:
-      "Open de app op donderdag, vrijdag of zaterdag en tik op de check-in knop. Je geeft aan dat je die avond de stad in wil. Dat is alles.",
+      "Open de app op donderdag en tik op de check-in knop. Je geeft aan dat je die avond de stad in wil. Dat is alles.",
     icoon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />

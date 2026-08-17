@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       titel="Privacybeleid"
-      bijwerking="3 augustus 2026"
+      bijwerking="17 augustus 2026"
       secties={[
         {
           titel: 'Inleiding',
@@ -24,10 +24,12 @@ export default function PrivacyPage() {
           titel: '1. Welke persoonsgegevens wij verwerken',
           inhoud: (
             <>
-              <p><strong className="text-white">Accountgegevens:</strong> voornaam, gebruikersnaam, e-mailadres, telefoonnummer, geboortedatum, profielfoto.</p>
-              <p><strong className="text-white">Profielgegevens:</strong> interesses, favoriete muziekstijlen, favoriete venues, groepsgroottevoorkeur, geplaatste foto&apos;s.</p>
-              <p><strong className="text-white">Identiteitsverificatie:</strong> verificatie via partner Didit. Hierbij worden voornaam, achternaam, geboortedatum, leeftijd, geslacht en nationaliteit verwerkt om uw identiteit te bevestigen. Wij slaan zelf geen onderliggende documenten op.</p>
-              <p><strong className="text-white">Gebruik van de applicatie:</strong> technische gegevens (IP-adres, apparaat-ID, push token), tijdstip en frequentie van inchecks, matchgegevens, betrouwbaarheidsscore en locatiegegevens bij het instellen van een afspraakpunt.</p>
+              <p><strong className="text-white">Accountgegevens:</strong> voornaam, gebruikersnaam, e-mailadres, telefoonnummer, geboortedatum, geslacht, profielfoto en optionele bio.</p>
+              <p><strong className="text-white">Profielgegevens:</strong> interesses, favoriete venues, voorkeuren (onder meer groepsgrootte en reisradius), geplaatste foto&apos;s.</p>
+              <p><strong className="text-white">Identiteitsverificatie:</strong> verificatie via partner Didit. Hierbij worden onder meer voornaam, achternaam, geboortedatum, leeftijd, geslacht en nationaliteit verwerkt om uw identiteit te bevestigen. Wij slaan zelf geen onderliggende identiteitsdocumenten of selfies op.</p>
+              <p><strong className="text-white">Gebruik van de applicatie:</strong> technische gegevens (IP-adres, apparaatgegevens, push token), tijdstip en frequentie van inchecks, match- en groepsgegevens, betrouwbaarheidsscore, en locatiegegevens wanneer u de kaart gebruikt, incheckt of een afspraakpunt instelt. Wij bewaren geen doorlopende locatiegeschiedenis buiten wat nodig is voor de dienst.</p>
+              <p><strong className="text-white">Moderatie en meldingen:</strong> inhoud van waarschuwingen, banstatus, bezwaren tegen een ban, meldingen over gebruikers, meldingen over onjuiste locatie- of evenementgegevens, bugmeldingen en feedback (inclusief optionele screenshots).</p>
+              <p><strong className="text-white">Analytische gebeurtenissen:</strong> geanonimiseerde of gepseudonimiseerde gebruiksgebeurtenissen om de app te verbeteren en misbruik te detecteren.</p>
             </>
           ),
         },
@@ -35,12 +37,14 @@ export default function PrivacyPage() {
           titel: '2. Doeleinden van verwerking',
           inhoud: (
             <ul className="list-disc list-inside space-y-1">
-              <li>Aanbieden van de OpStap-applicatie, matching en groepschat</li>
+              <li>Aanbieden van de OpStap-applicatie, matching (op de geconfigureerde matchdag(en), standaard donderdag) en groepschat</li>
+              <li>Inloggen en accountbeveiliging via SMS-verificatie</li>
               <li>Identiteitsverificatie voor de veiligheid van gebruikers</li>
               <li>Berekenen en bijhouden van de betrouwbaarheidsscore</li>
-              <li>Communicatie via pushberichten over matches en updates</li>
+              <li>Communicatie via pushberichten over matches, updates en moderatie</li>
+              <li>Moderatie: waarschuwingen, bans, bezwaren en afhandeling van meldingen</li>
+              <li>Verbetering van de dienst en opsporen van misbruik (security &amp; monitoring)</li>
               <li>Naleving van wettelijke verplichtingen</li>
-              <li>Beveiliging en monitoring, inclusief het opsporen van misbruik</li>
             </ul>
           ),
         },
@@ -48,9 +52,9 @@ export default function PrivacyPage() {
           titel: '3. Rechtsgrondslagen',
           inhoud: (
             <ul className="list-disc list-inside space-y-1">
-              <li><strong className="text-white">Uitvoering van een overeenkomst:</strong> gegevens noodzakelijk voor het aanbieden van de app en matchingfunctionaliteit</li>
-              <li><strong className="text-white">Gerechtvaardigd belang:</strong> beveiliging, fraudepreventie en betrouwbaarheidsscore</li>
-              <li><strong className="text-white">Toestemming:</strong> identiteitsverificatie via Didit en gebruik van pushberichten</li>
+              <li><strong className="text-white">Uitvoering van een overeenkomst:</strong> gegevens noodzakelijk voor het aanbieden van de app, inloggen, matching en chat</li>
+              <li><strong className="text-white">Gerechtvaardigd belang:</strong> beveiliging, fraude- en misbruikpreventie, betrouwbaarheidsscore, moderatie en productverbetering</li>
+              <li><strong className="text-white">Toestemming:</strong> identiteitsverificatie via Didit en gebruik van pushberichten (waar vereist)</li>
               <li><strong className="text-white">Wettelijke verplichting:</strong> gegevensverstrekking aan bevoegde instanties</li>
             </ul>
           ),
@@ -69,11 +73,13 @@ export default function PrivacyPage() {
                 </thead>
                 <tbody className="divide-y divide-white/5">
                   {[
-                    ['Didit', 'Nederland', 'Identiteitsverificatie'],
+                    ['Didit', 'Nederland / EER', 'Identiteitsverificatie'],
+                    ['Twilio', 'VS', 'SMS voor inloggen (OTP)'],
                     ['Stream', 'VS', 'Groepschat en berichtendienst'],
                     ['Mapbox', 'VS', 'Kaart en locatiediensten'],
-                    ['Supabase', 'VS', 'Database, authenticatie en opslag'],
+                    ['Supabase', 'VS / EER*', 'Database, authenticatie en opslag'],
                     ['Resend', 'VS', 'Transactionele e-mails'],
+                    ['Expo', 'VS', 'Pushnotificaties naar apparaten'],
                   ].map(([naam, land, doel]) => (
                     <tr key={naam}>
                       <td className="py-2 pr-4">{naam}</td>
@@ -83,6 +89,7 @@ export default function PrivacyPage() {
                   ))}
                 </tbody>
               </table>
+              <p className="mt-3 text-sm text-gray-400">* Bij doorgifte buiten de EER treffen wij passende waarborgen (onder meer standaardcontractbepalingen), voor zover van toepassing.</p>
             </div>
           ),
         },
@@ -103,8 +110,9 @@ export default function PrivacyPage() {
                     ['Matchgegevens en chatberichten', 'Maximaal 90 dagen na de match'],
                     ['Betrouwbaarheidsscore', 'Zolang het account actief is'],
                     ['Verificatieresultaat (Didit)', 'Zolang het account actief is'],
-                    ['Logbestanden', 'Maximaal 12 maanden'],
-                    ['Rapportgegevens', 'Maximaal 12 maanden na afhandeling'],
+                    ['Moderatie (waarschuwingen, bans, bezwaren)', 'Zolang nodig voor veiligheid en afhandeling, daarna maximaal 12 maanden'],
+                    ['Meldingen (gebruikers, content, bugs, feedback)', 'Maximaal 12 maanden na afhandeling'],
+                    ['Analytische / technische logs', 'Maximaal 12 maanden'],
                   ].map(([type, termijn]) => (
                     <tr key={type}>
                       <td className="py-2 pr-4">{type}</td>
@@ -128,6 +136,7 @@ export default function PrivacyPage() {
                 <li>Recht op beperking van verwerking</li>
                 <li>Recht op gegevensoverdraagbaarheid</li>
                 <li>Recht van bezwaar tegen verwerking op basis van gerechtvaardigd belang</li>
+                <li>Recht om toestemming in te trekken (waar verwerking op toestemming berust), zonder afbreuk aan de rechtmatigheid vóór intrekking</li>
               </ul>
               <p className="mt-2">Verzoeken richten aan <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">opstap@pascal.services</a>. Wij reageren binnen één maand.</p>
             </>

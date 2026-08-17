@@ -15,7 +15,7 @@ export default function PrivacyPage() {
     <LegalLayout
       lang="en"
       titel="Privacy Policy"
-      bijwerking="3 August 2026"
+      bijwerking="17 August 2026"
       secties={[
         {
           titel: 'Introduction',
@@ -25,10 +25,12 @@ export default function PrivacyPage() {
           titel: '1. Personal data we process',
           inhoud: (
             <>
-              <p><strong className="text-white">Account data:</strong> first name, username, email address, phone number, date of birth, profile photo.</p>
-              <p><strong className="text-white">Profile data:</strong> interests, favourite music styles, favourite venues, group size preference, uploaded photos.</p>
-              <p><strong className="text-white">Identity verification:</strong> verification via our partner Didit. This processes first name, last name, date of birth, age, gender, and nationality to confirm your identity. We do not store the underlying documents ourselves.</p>
-              <p><strong className="text-white">App usage:</strong> technical data (IP address, device ID, push token), time and frequency of check-ins, match data, trust score, and location data when setting a meeting point.</p>
+              <p><strong className="text-white">Account data:</strong> first name, username, email address, phone number, date of birth, gender, profile photo, and optional bio.</p>
+              <p><strong className="text-white">Profile data:</strong> interests, favourite venues, preferences (including group size and travel radius), uploaded photos.</p>
+              <p><strong className="text-white">Identity verification:</strong> verification via our partner Didit. This may process first name, last name, date of birth, age, gender, and nationality to confirm your identity. We do not store the underlying identity documents or selfies ourselves.</p>
+              <p><strong className="text-white">App usage:</strong> technical data (IP address, device data, push token), time and frequency of check-ins, match and group data, trust score, and location data when you use the map, check in, or set a meeting point. We do not keep an ongoing location history beyond what is needed to provide the service.</p>
+              <p><strong className="text-white">Moderation and reports:</strong> warning content, ban status, ban appeals, reports about users, reports about incorrect venue or event information, bug reports and feedback (including optional screenshots).</p>
+              <p><strong className="text-white">Analytics events:</strong> anonymised or pseudonymised usage events to improve the app and detect abuse.</p>
             </>
           ),
         },
@@ -36,12 +38,14 @@ export default function PrivacyPage() {
           titel: '2. Purposes of processing',
           inhoud: (
             <ul className="list-disc list-inside space-y-1">
-              <li>Providing the OpStap application, matching, and group chat</li>
+              <li>Providing the OpStap application, matching (on the configured match day(s), default Thursday) and group chat</li>
+              <li>Login and account security via SMS verification</li>
               <li>Identity verification for the safety of users</li>
               <li>Calculating and maintaining the trust score</li>
-              <li>Communication via push notifications about matches and updates</li>
+              <li>Communication via push notifications about matches, updates and moderation</li>
+              <li>Moderation: warnings, bans, appeals and handling reports</li>
+              <li>Improving the service and detecting abuse (security &amp; monitoring)</li>
               <li>Compliance with legal obligations</li>
-              <li>Security and monitoring, including detection of abuse</li>
             </ul>
           ),
         },
@@ -49,9 +53,9 @@ export default function PrivacyPage() {
           titel: '3. Legal bases',
           inhoud: (
             <ul className="list-disc list-inside space-y-1">
-              <li><strong className="text-white">Performance of a contract:</strong> data necessary for providing the app and matching functionality</li>
-              <li><strong className="text-white">Legitimate interest:</strong> security, fraud prevention, and trust score</li>
-              <li><strong className="text-white">Consent:</strong> identity verification via Didit and use of push notifications</li>
+              <li><strong className="text-white">Performance of a contract:</strong> data necessary for providing the app, login, matching and chat</li>
+              <li><strong className="text-white">Legitimate interest:</strong> security, fraud and abuse prevention, trust score, moderation and product improvement</li>
+              <li><strong className="text-white">Consent:</strong> identity verification via Didit and use of push notifications (where required)</li>
               <li><strong className="text-white">Legal obligation:</strong> disclosure of data to competent authorities</li>
             </ul>
           ),
@@ -70,11 +74,13 @@ export default function PrivacyPage() {
                 </thead>
                 <tbody className="divide-y divide-white/5">
                   {[
-                    ['Didit', 'Netherlands', 'Identity verification'],
+                    ['Didit', 'Netherlands / EEA', 'Identity verification'],
+                    ['Twilio', 'US', 'SMS for login (OTP)'],
                     ['Stream', 'US', 'Group chat and messaging'],
                     ['Mapbox', 'US', 'Map and location services'],
-                    ['Supabase', 'US', 'Database, authentication, and storage'],
+                    ['Supabase', 'US / EEA*', 'Database, authentication and storage'],
                     ['Resend', 'US', 'Transactional emails'],
+                    ['Expo', 'US', 'Push notifications to devices'],
                   ].map(([name, country, purpose]) => (
                     <tr key={name}>
                       <td className="py-2 pr-4">{name}</td>
@@ -84,6 +90,7 @@ export default function PrivacyPage() {
                   ))}
                 </tbody>
               </table>
+              <p className="mt-3 text-sm text-gray-400">* Where data is transferred outside the EEA, we use appropriate safeguards (including standard contractual clauses) where applicable.</p>
             </div>
           ),
         },
@@ -104,8 +111,9 @@ export default function PrivacyPage() {
                     ['Match data and chat messages', 'Up to 90 days after the match'],
                     ['Trust score', 'For as long as the account is active'],
                     ['Verification result (Didit)', 'For as long as the account is active'],
-                    ['Log files', 'Up to 12 months'],
-                    ['Report data', 'Up to 12 months after resolution'],
+                    ['Moderation (warnings, bans, appeals)', 'As long as needed for safety and handling, then up to 12 months'],
+                    ['Reports (users, content, bugs, feedback)', 'Up to 12 months after resolution'],
+                    ['Analytics / technical logs', 'Up to 12 months'],
                   ].map(([type, period]) => (
                     <tr key={type}>
                       <td className="py-2 pr-4">{type}</td>
@@ -129,6 +137,7 @@ export default function PrivacyPage() {
                 <li>Right to restriction of processing</li>
                 <li>Right to data portability</li>
                 <li>Right to object to processing based on legitimate interest</li>
+                <li>Right to withdraw consent (where processing is based on consent), without affecting lawfulness before withdrawal</li>
               </ul>
               <p className="mt-2">Requests can be sent to <a href="mailto:opstap@pascal.services" className="text-opstap-orange hover:underline">opstap@pascal.services</a>. We will respond within one month.</p>
             </>

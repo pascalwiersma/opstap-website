@@ -15,9 +15,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/privacy`, lastModified: nu, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE_URL}/voorwaarden`, lastModified: nu, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE_URL}/richtlijnen`, lastModified: nu, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE_URL}/child-safety`, lastModified: nu, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE_URL}/account-verwijderen`, lastModified: nu, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE_URL}/en/privacy`, lastModified: nu, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE_URL}/en/terms`, lastModified: nu, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE_URL}/en/child-safety`, lastModified: nu, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE_URL}/en/account-deletion`, lastModified: nu, changeFrequency: 'yearly', priority: 0.3 },
   ]
 }

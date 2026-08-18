@@ -15,6 +15,7 @@ const LINKS = [
       { label: 'Privacybeleid', href: '/privacy' },
       { label: 'Gebruiksvoorwaarden', href: '/voorwaarden' },
       { label: 'Community Richtlijnen', href: '/richtlijnen' },
+      { label: 'Child Safety Standards', href: '/child-safety' },
     ],
   },
   {
